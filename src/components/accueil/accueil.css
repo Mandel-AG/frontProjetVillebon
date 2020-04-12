@@ -25,7 +25,7 @@
 
 .divProchainMatch{
    width: 70%;
-   background-color: black;
+   background-color: #141414;
    color: whitesmoke;
    text-align: center;
    padding: 3px;
@@ -47,7 +47,7 @@
 
 .divProchainMatch li{
    background-color: whitesmoke;
-   color: black;
+   color: #141414;
    width: 100%;
    height: 5vh;
    margin: 3px 0;
@@ -67,7 +67,7 @@
 
 .divResultats{
    width: 70%;
-   background-color: black;
+   background-color: #141414;
    color: whitesmoke;
    text-align: center;
    padding: 3px;
@@ -119,7 +119,7 @@
 
 .AccueilfiltreEquipe ul li{
    width: 50%;
-   font-size: 1.4rem;
+   font-size: 1.2rem;
    font-weight: bold;
 }
 
@@ -132,7 +132,7 @@
 
 .divResultats li{
    background-color: whitesmoke;
-   color: black;
+   color: #141414;
    width: 100%;
    height: 5vh;
    margin: 3px 0;
@@ -158,7 +158,7 @@
 
    .divProchainMatch li, .divResultats li{
       background-color: whitesmoke;
-      color: black;
+      color: #141414;
       width: 100%;
       height: 2.7vh;
       margin: 3px 0;

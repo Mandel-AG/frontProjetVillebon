@@ -1,0 +1,17 @@
+.containerGallery{
+
+}
+
+.ulGallery{
+   width: 100%;
+   display: flex;
+   flex-direction: row;
+   list-style: none;
+   padding: 2vw 0;
+   justify-content: space-around;
+   font-size: 1.7rem;
+}
+
+.divGallery{
+
+}

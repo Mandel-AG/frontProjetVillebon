@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom'
 import './header.css';
 
 function Header(props){
@@ -10,13 +11,13 @@ function Header(props){
          </div>
          <nav>
             <ul className='ulHeader'>
-               <li> Accueil </li>
-               <li> Club </li>
-               <li> Categorie </li>
-               <li> Evenement </li>
-               <li> Gallery </li>
-               <li> Contact </li>
-               <li> Boutique </li>
+               <Link to='/accueil'> Accueil </Link>
+               <Link to='/club'> Club </Link>
+               <Link> Categorie </Link>
+               <Link to='/evenements' > Evenement </Link>
+               <Link to='/gallery'> Gallery </Link>
+               <Link to='/contact'> Contact </Link>
+               <Link to='/boutique'> Boutique </Link>
             </ul>
          </nav>
       </div>

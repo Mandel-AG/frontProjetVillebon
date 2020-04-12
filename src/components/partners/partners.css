@@ -1,0 +1,9 @@
+.containerPartners{
+   background: black;
+   min-height: 20vh;
+}
+
+.ulPartners{
+   display: flex;
+   flex-direction: column;
+}

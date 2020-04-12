@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import axios from 'axios';
-import { Loader, Rss } from '../index';
+import { Loader, Rss, Partners } from '../index';
 import './accueil.css'
 
 class Accueil extends Component{
@@ -8,19 +7,15 @@ class Accueil extends Component{
 		super(props)
 
 		this.state ={
-				posts:[],
-				loaded:false,
-				results: [],
-				postMatch: [],
-				postResultats : [],
-				selectedFiltreTeam : []
+				selectedFiltreTeam : [],
+				loaded:false
 		}
 	}
 
 
 	filterResults = (type) => {
-		const results = this.state.results;
-		const newFilter = [ ...results]
+		const results = this.props.results;
+		const newFilter = [ ...results];
 		const filtered = newFilter.filter( element => element.equipeA.toLowerCase() === type)
 		this.setState({
 			selectedFiltreTeam : filtered
@@ -28,52 +23,27 @@ class Accueil extends Component{
 	}
     
 	allresults = () =>{
-		const selectedFiltreTeam = [...this.state.results]
+		const selectedFiltreTeam = [...this.props.results];
 		this.setState({
 			selectedFiltreTeam 
 		})
 	}
 
 
-
 	componentDidMount(){
-		axios.all([
-			axios.get('http://localhost:3004/posts'),
-			axios.get('http://localhost:3004/score')
-		])
+		const selectedFiltreTeam = [...this.props.results];
+		this.setState({
+			selectedFiltreTeam,
+			loaded:true
+		})
 
-		.then(axios.spread((posts, score) => {
-			const post = posts.data.map(element => ({
-				title: element.title,
-				description: element.description,
-				typePost : element.typePost
-				}))
-
-			const scores = score.data.map(element => ({
-				pointsA: element.pointsA,
-				pointsB: element.pointsB,
-				equipeA : element.equipeA,
-				equipeB : element.equipeB,
-				result : element.result
-			}))
-			console.log(post, scores)
-
-			this.setState({
-				posts: post,
-				results:scores,
-				loaded:true,
-				selectedFiltreTeam : scores
-			})
-		 }));
+		console.log(this.props.medias)
 	}
-    
 
 
 	render(){
-
-		console.log(this.state.posts)
 		const posts = 
-		this.state.posts.map(post => (
+		this.props.posts.map(post => (
 			// if(post.typePost.toLowerCase() === 'prochainmatch' ){
 			// 	 <li key={Math.random()} > { post.title } </li>
 			// }
@@ -90,7 +60,6 @@ class Accueil extends Component{
 				${ score.pointsB }`}
 			</li>
 	))
-
 
 		return(
 			<div className='containeBlockAccueil'>
@@ -133,6 +102,7 @@ class Accueil extends Component{
 							</div>
 						</div>
 					<Rss/>
+					<Partners medias={ this.props.medias }/>
 					</>
 					)
 					:

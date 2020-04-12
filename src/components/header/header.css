@@ -30,6 +30,11 @@
    justify-content: space-around;
    list-style: none;
    font-family: 'Open Sans', sans-serif;
+   text-decoration: none;
+}
+
+.ulHeader li{
+   text-decoration: none;
 }
 
 .ulHeader li:hover{
