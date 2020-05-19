@@ -54,54 +54,69 @@ class Contact extends Component {
   render() {
     return (
       <div className="containerContact">
-        <Formik
-          onSubmit={this.submit}
-          initialValues={{name: '', email: '', message: ''}}
-          validate={this.validate}
-        >
-          {({values,
-          handleBlur,
-          handleChange,
-          handleSubmit,
-          isSubmitting,
-          errors
-        }) => (
-            <form onSubmit={ handleSubmit } className="bg-white border p-5 d-flex flex-column">
-              <div className="form-group w-50">
-                <label>Nom</label>
-                <input type="text"
-                      name="name"
-                      className="form-control "
-                      onChange={handleChange}
-                      onBlur={handleBlur}
-                      value={values.name} />
-                <div className='text-danger'>{errors.name}</div>
-              </div>
-              <div className="form-group w-50">
-                <label>Adresse email</label>
-                <input type="email"
-                      name="email"
-                      className="form-control"
-                      onChange={handleChange}
-                      onBlur={handleBlur}
-                      value={values.email} />
-              </div>
-              <div className="form-group w-50">
-                <label>Message</label>
-                <textarea type="text"
-                      name="message"
-                      onChange={handleChange}
-                      onBlur={handleBlur}
-                      value={values.message} />
-               <div className='text-danger'>{errors.message}</div>
+         <div className='divInfos'>
+            <h3>Informations</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum eu porta mi, ac dignissim nisi. 
+               Orci varius natoque penatibus et magnis dis parturient montes, 
+               nascetur ridiculus mus. Sed eu luctus quam. Aenean rhoncus dui dolor, 
+               s tortor volutpat vel. Maecenas ac arcu nunc. Quisque aliquet quam id laoreet pulvinar. 
+               Maecenas bibendum nibh eu vestibulum pulvinar. Nunc vitae enim dapibus, faucibus eros at, 
+               consectetur augue.</p>
+         </div>
 
-              </div>
-              <button type="submit" className="btn btn-dark w-25" disabled={isSubmitting}>
-                Envoyer
-              </button>
-            </form>
-          )}
-        </Formik>
+         <div className='divInputContact'>
+
+            <h3>Vous pouvez nous contacter directement ici.</h3>
+            <p>Nous vous repondrons dans les plsu bref delais</p>
+            <Formik
+               onSubmit={this.submit}
+               initialValues={{name: '', email: '', message: ''}}
+               validate={this.validate}
+            >
+               {({values,
+               handleBlur,
+               handleChange,
+               handleSubmit,
+               isSubmitting,
+               errors
+            }) => (
+                  <form onSubmit={ handleSubmit } className="bg-white border p-5 d-flex flex-column">
+                  <div className="form-group w-50">
+                     <label>Nom</label>
+                     <input type="text"
+                           name="name"
+                           className="form-control "
+                           onChange={handleChange}
+                           onBlur={handleBlur}
+                           value={values.name} />
+                     <div className='text-danger'>{errors.name}</div>
+                  </div>
+                  <div className="form-group w-50">
+                     <label>Adresse email</label>
+                     <input type="email"
+                           name="email"
+                           className="form-control"
+                           onChange={handleChange}
+                           onBlur={handleBlur}
+                           value={values.email} />
+                  </div>
+                  <div className="form-group w-50">
+                     <label>Message</label>
+                     <textarea type="text"
+                           name="message"
+                           onChange={handleChange}
+                           onBlur={handleBlur}
+                           value={values.message} />
+                     <div className='text-danger'>{errors.message}</div>
+
+                  </div>
+                  <button type="submit" className="btn btn-dark w-25" disabled={isSubmitting}>
+                     Envoyer
+                  </button>
+                  </form>
+               )}
+            </Formik>
+         </div>
       </div>
     )
   }

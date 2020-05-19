@@ -5,30 +5,30 @@ import './rss.css';
 function Rss(props){
   const [ffbb, setffbb] = useState([]);
 
-  // axios.get('http://www.ffbb.com/rss2.xml', {header :{'Access-Control-Allow-Origin':'*'}})
-  //      .then(a => console.log(a))
+  axios.get('http://www.ffbb.com/rss2.xml', {header :{'Access-Control-Allow-Origin':'*'}})
+       .then(a => console.log(a))
   
 
-//   const FetchDataFromRssFeed = () => {
-//     var request = new XMLHttpRequest();
-//     request.onreadystatechange = () => {
-//       if (request.readyState === 4 && request.status === 200) {
-//         var myObj = JSON.parse(request.responseText);
-//         for (var i = 0; i < 1; i ++) {
-//           setffbb({recentBlogPost: {
-//             name: myObj.items[i].title,
-//             url: myObj.items[i].link
-//           }})
-//         }
-//       }
-//     }
-//     request.open("GET", "http://www.ffbb.com/rss2.xml", true);
-//     request.send();
-//     // {header :{'Access-Control-Allow-Origin':'*'}}
-//   }
+  const FetchDataFromRssFeed = () => {
+    var request = new XMLHttpRequest();
+    request.onreadystatechange = () => {
+      if (request.readyState === 4 && request.status === 200) {
+        var myObj = JSON.parse(request.responseText);
+        for (var i = 0; i < 1; i ++) {
+          setffbb({recentBlogPost: {
+            name: myObj.items[i].title,
+            url: myObj.items[i].link
+          }})
+        }
+      }
+    }
+    request.open("GET", "http://www.ffbb.com/rss2.xml", true);
+    request.send();
+    // {header :{'Access-Control-Allow-Origin':'*'}}
+  }
   
-//   FetchDataFromRssFeed();
-// console.log(FetchDataFromRssFeed)
+  FetchDataFromRssFeed();
+console.log(FetchDataFromRssFeed)
   
 
 

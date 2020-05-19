@@ -7,3 +7,5 @@ export { default as Club} from './club/Club';
 export { default as Evenements} from './evenements/Evenements';
 export { default as Gallery} from './gallery/Gallery';
 export { default as Contact} from './contact/Contact';
+export { default as Boutique} from './boutique/Boutique';
+export { default as Categories} from './categories/Categories';

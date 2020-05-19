@@ -8,7 +8,8 @@ class Accueil extends Component{
 
 		this.state ={
 				selectedFiltreTeam : [],
-				loaded:false
+				loaded:false,
+				toggle:false
 		}
 	}
 
@@ -20,6 +21,7 @@ class Accueil extends Component{
 		this.setState({
 			selectedFiltreTeam : filtered
 		})
+		console.log('iu')
 	}
     
 	allresults = () =>{
@@ -27,6 +29,15 @@ class Accueil extends Component{
 		this.setState({
 			selectedFiltreTeam 
 		})
+	}
+
+	toggle = (e) =>{
+		// this.setState({
+		// 	toggle:!this.state.toggle
+		// })
+		// const base = true
+		// e.target.active = !e.target.active
+		console.log(e.getAttribute('class'))
 	}
 
 
@@ -42,12 +53,13 @@ class Accueil extends Component{
 
 
 	render(){
+		const event = document.querySelector('.containerAccueilEvenements');
 		const posts = 
 		this.props.posts.map(post => (
 			// if(post.typePost.toLowerCase() === 'prochainmatch' ){
 			// 	 <li key={Math.random()} > { post.title } </li>
 			// }
-			<li key={Math.random()} > { post.description } </li>
+			<li key={Math.random()} > { post.title } </li>
 
 		))
 
@@ -59,13 +71,27 @@ class Accueil extends Component{
 				${ score.pointsA } - 
 				${ score.pointsB }`}
 			</li>
-	))
+		))
 
 		return(
 			<div className='containeBlockAccueil'>
 				{(this.state.loaded) ? (
 					<>
-						<div className='containerProchainMatchs'>
+
+						<div active={true} className='containerAccueilEvenements'>
+							<div>
+								<h3> Evenements </h3>
+							</div>
+							<div className='divAccueilEvenements'>
+									<ul className='ulAccueilEvenements'>
+										{posts}
+									</ul>
+							</div>
+						</div>
+
+
+
+						<div className={(this.state.toggle) ? ('hidden') : ('containerProchainMatchs show')}>
 							<div>
 								<h3> Prochain Matchs </h3>
 							</div>
@@ -91,6 +117,7 @@ class Accueil extends Component{
 												<li onClick={this.allresults} >Tout</li>
 												<li onClick={()=>this.filterResults('sm1')} >SM1</li>
 												<li onClick={()=>this.filterResults('u20')} >U20</li>
+												<li onClick={()=>this.filterResults('u17')} >U17</li>
 												<li onClick={()=>this.filterResults('u15')} >U15</li>
 												<li onClick={()=>this.filterResults('u13')} >U13</li>
 												<li onClick={()=>this.filterResults('u11')} >U11</li>

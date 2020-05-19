@@ -1,13 +1,26 @@
+.logo{
+   background-color: white;
+   width: 130px;
+   height: 100px;
+   left: 3vw;
+   position: absolute;
+}
+
+.logo img{
+   width: 100%;  
+   height: 100%;
+}
+
 .containerHeader{
    color: whitesmoke;
    text-align: center;
-   height: 20.5vh;
+   height: 28.5vh;
    margin-bottom: 7vh;
    padding-top: 2vh;
 }
 
 .titleHeader{
-   font-size: 7.5vh;
+   font-size: 10vh;
    margin-top: 0;
    margin-bottom: 1vh;
    font-family: 'Playball', cursive;
@@ -37,11 +50,19 @@
    text-decoration: none;
 }
 
-.ulHeader li:hover{
+.ulHeader .link:hover{
    border-bottom: 2px solid yellow;
    cursor: pointer;
+   text-decoration: none;
+   color: whitesmoke;
 }
 
+
+.link{
+   text-decoration: none;
+   color: whitesmoke;
+   height: 3.5vh;
+}
 
 
 @media only screen and (max-width: 400px) {

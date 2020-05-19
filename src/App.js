@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import axios from 'axios';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import { Header, Accueil, Club, Evenements, Gallery, Contact } from './components/index';
+import { Header, Accueil, Club, Evenements, Gallery, Contact, Boutique, Categories } from './components/index';
 
 class App extends Component{
   constructor(props){
@@ -11,19 +11,23 @@ class App extends Component{
     this.state ={
       posts:[],
       medias: [],
-      results:[]
+      results:[],
+      clubs:[]
     }
   }
 
 
   componentDidMount(){
 		axios.all([
-			axios.get('http://localhost:3004/posts'),
-			axios.get('http://localhost:3004/score'),
-			axios.get('http://localhost:3004/medias')
+			axios.get('http://localhost:3004/api/posts'),
+			axios.get('http://localhost:3004/api/scores'),
+			axios.get('http://localhost:3004/api/medias'),
+			axios.get('http://localhost:3004/api/club')
 		])
 
-		.then(axios.spread((posts, scores, medias) => {
+		.then(axios.spread((posts, scores, medias, clubs) => {
+      
+      console.log(medias)
 			const post = posts.data.map(element => ({
 				title: element.title,
 				description: element.description,
@@ -40,30 +44,44 @@ class App extends Component{
       
       const media = medias.data.map(element => ({
         name : element.name,
+        mediaType : element.mediaType,
+        team : element.team,
+        description : element.description,
+        picture : element.picture
+      }))
+
+
+      const club = clubs.data.map(element => ({
+        name : element.name,
         team : element.equipe,
         description : element.description,
-        file : element.file,
-        typeMedia : element.typeMedia
+        infos : element.infos,
+        picture : element.picture
       }))
-			// console.log(media, 'medias')
-      { if( media && post && score){
+
+      { if( media && post && score && club){
           this.setState({
             posts: post,
             results:score,
             medias:  media,
+            clubs : club,
             loaded:true,
             selectedFiltreTeam : scores
           })
       }
-      else {console.log('oui')}
-    }
-		 }));
-	}
+      else {console.error('une des requetes est null')}
+      }
+    }))
+    .catch((err)=>{
+      console.error('un requete n\'est pas etablie')
+    })
+  }
+  
 
   render(){
-
-  // console.log(this.state.medias, 'media state')
-
+    console.log(this.state.medias)
+    console.log(this.state.results)
+    console.log(this.state.posts)
     return (
       <Router>
         <div>
@@ -72,11 +90,13 @@ class App extends Component{
           </div>
           <div>
           <Switch>
-              <Route exact path="/accueil" render={(props) => <Accueil {...props} posts={ this.state.posts } results={ this.state.results } medias={ this.state.medias }/>} />
-              <Route exact path="/club" render={(props) => <Club {...props}  medias={ this.state.medias }/>} />
-              <Route exact path="/evenements" render={(props) => <Evenements {...props} medias={ this.state.medias }/>} />
-              <Route exact path="/gallery" render={(props) => <Gallery {...props} posts={ this.state.posts }/>} />
+              <Route exact path="/" render={(props) => <Accueil {...props} posts={ this.state.posts } results={ this.state.results } medias={ this.state.medias }/>} />
+              <Route exact path="/club" render={(props) => <Club {...props} clubs={ this.state.clubs }  medias={ this.state.medias }/>} />
+              <Route exact path="/categories" render={(props) => <Categories {...props}  posts={ this.state.posts } results={ this.state.results } medias={ this.state.medias }/>} />
+              <Route exact path="/evenements" render={(props) => <Evenements {...props} posts={ this.state.posts }/>} />
+              <Route exact path="/gallery" render={(props) => <Gallery {...props} medias={ this.state.medias }/>} />
               <Route exact path="/contact" render={(props) => <Contact {...props} />} />
+              <Route exact path="/boutique" render={(props) => <Boutique {...props} posts={ this.state.posts } />} />
           </Switch>
           </div>
         </div>
