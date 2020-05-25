@@ -3,17 +3,14 @@ import './boutique.css';
 
 function Boutique(props){
 
-   const posts = props.posts;
-   const filteredPosts = posts.filter(post => (
-      post.typePost.toLowerCase() === 'product' 
-   ))
+   const dataProducts = props.products;
 
 
-   const produits = filteredPosts.map(  produit =>(
-      <div className='eachEvents' key={ produit.id }>
-         <h3>{ produit.title }</h3>
-         <p>{ produit.description }</p>
-         <img src={ produit.file} alt={ produit.name } width='500px' />
+   const products = dataProducts.map(  product =>(
+      <div className='eachEvents' key={ product.id }>
+         <h3>{ product.name }</h3>
+         <p>{ product.description }</p>
+         <img src={ product.picture} alt={ product.name } width='500px' />
          {/* {(evenement.file) ? <img src={ evenement.file} alt={ evenement.name } /> : (null)} */}
       </div>
    ))
@@ -21,7 +18,7 @@ function Boutique(props){
          <div className="containerBoutique">
             <h1>Produits</h1>
             <div className='divProduits'>
-               { produits }
+               { products }
             </div>
          </div>
 

@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
 import { Loader, Rss, Partners } from '../index';
-import './accueil.css'
+import './accueil.css';
+// import victory from '../../../public/victory.png'
+// import victory from require('../../../public');
 
 class Accueil extends Component{
 	constructor(props){
 		super(props)
 
 		this.state ={
-				selectedFiltreTeam : [],
+				selectedTeam : [],
 				loaded:false,
 				toggle:false
 		}
@@ -15,19 +17,18 @@ class Accueil extends Component{
 
 
 	filterResults = (type) => {
-		const results = this.props.results;
+		const results = this.props.scores;
 		const newFilter = [ ...results];
-		const filtered = newFilter.filter( element => element.equipeA.toLowerCase() === type)
+		const filtered = newFilter.filter( element => element.homeTeam.toLowerCase().trim() === type)
 		this.setState({
-			selectedFiltreTeam : filtered
+			selectedTeam : filtered
 		})
-		console.log('iu')
 	}
     
 	allresults = () =>{
-		const selectedFiltreTeam = [...this.props.results];
+		const selectedTeam = [...this.props.scores];
 		this.setState({
-			selectedFiltreTeam 
+			selectedTeam 
 		})
 	}
 
@@ -42,36 +43,40 @@ class Accueil extends Component{
 
 
 	componentDidMount(){
-		const selectedFiltreTeam = [...this.props.results];
+		let selectedTeam = [...this.props.scores];
 		this.setState({
-			selectedFiltreTeam,
+			selectedTeam,
 			loaded:true
 		})
-
-		console.log(this.props.medias)
 	}
 
 
 	render(){
-		const event = document.querySelector('.containerAccueilEvenements');
-		const posts = 
-		this.props.posts.map(post => (
-			// if(post.typePost.toLowerCase() === 'prochainmatch' ){
-			// 	 <li key={Math.random()} > { post.title } </li>
+		// const event = document.querySelector('.containerAccueilEvenements');
+		const events = 
+		this.props.events.map(event => (
+			// if(event.typeevent.toLowerCase() === 'prochainmatch' ){
+			// 	 <li key={Math.random()} > { event.title } </li>
 			// }
-			<li key={Math.random()} > { post.title } </li>
+			<li key={Math.random()} > { event.title } </li>
 
 		))
 
-		const filteredScore = this.state.selectedFiltreTeam.map(score => (
-			<li key={Math.random()} >
+		console.log(this.state.selectedTeam)
+		console.log(this.props.scores)
+
+		const filteredScore = this.state.selectedTeam.map(score => (
+			<li key={Math.random()}  className='d-flex justify-content-around' >
+				{/* <img id='result' style={{width : '25px'}}  src='/victory.png' alt='victoire' /> */}
+				{ (score.result.toLowerCase().trim() === 'victoire') ? (<img id='result'  src='/victory.png' alt='victoire' />) : (<img id='result'  src='/defeat.png' alt='victoire' />)}
 				{`${ score.result } des 
-				${ score.equipeA.toUpperCase() }  contre 
-				${ score.equipeB.toUpperCase() }  - 
-				${ score.pointsA } - 
-				${ score.pointsB }`}
+				${ score.homeTeam }  contre 
+				${ score.opponent }  - 
+				${ score.homeTeamScore } - 
+				${ score.opponentScore }`}
 			</li>
 		))
+		
 
 		return(
 			<div className='containeBlockAccueil'>
@@ -84,7 +89,7 @@ class Accueil extends Component{
 							</div>
 							<div className='divAccueilEvenements'>
 									<ul className='ulAccueilEvenements'>
-										{posts}
+										{events}
 									</ul>
 							</div>
 						</div>
@@ -97,7 +102,7 @@ class Accueil extends Component{
 							</div>
 							<div className='divProchainMatch'>
 									<ul className='ulAccueilProchainMatchs'>
-										{posts}
+										{events}
 									</ul>
 							</div>
 						</div>

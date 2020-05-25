@@ -37,7 +37,7 @@ class Gallery extends Component{
    render(){
    console.log(this.props.medias)
       const mediaList = this.state.filteredMedias.map(media => (
-         <div className='chaqueMedia'>
+         <div className='chaqueMedia' key={media.id}>
             <img src={ media.picture } alt={ media.name } />
             <p>{ media.name }</p>
          </div>
@@ -47,7 +47,7 @@ class Gallery extends Component{
       return(
          <div className="containerGallery">
             <ul className='ulGallery'>
-               <li  onClick={()=> this.filterMedias('team') }>Equipes</li>
+               <li  onClick={()=> this.filterMedias('product') }>Equipes</li>
                <li  onClick={()=> this.filterMedias('event') }>Evenements</li>
             </ul>
 

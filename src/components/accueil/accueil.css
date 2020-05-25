@@ -203,7 +203,10 @@
    margin-bottom: 3vh;
 }
 
-
+#result{
+   width: 30px;
+   height: 30px;
+}
 
 
 @media only screen and (max-width: 380px) {
@@ -216,6 +219,12 @@
       margin: 3px 0;
       font-size: 0.7rem;
    }
+
+
+   .divResultats li{
+      font-size: 0.5rem;
+   }
+
 
 
    .divProchainMatch, .divResultats, .divAccueilEvenements{
@@ -247,5 +256,11 @@
    .AccueilfiltreEquipe ul li{
       font-size: 0.9rem;
    }
+
+   #result{
+      width: 15px;
+      height: 15px;
+   }
+   
 
 }

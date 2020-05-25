@@ -9,10 +9,12 @@ function Partners(props){
       media.mediaType.toLowerCase() === 'partner'
    ))
 
-   console.log(filteredMedias)
+   console.log(props.medias)
 
    const mediasList = filteredMedias.map(media =>(
+      <div key={media.id}>
        <img src={ media.picture } alt={ media.name } />
+      </div>
    ))
    return(
       <div className="containerPartners">

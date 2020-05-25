@@ -10,6 +10,10 @@
 
 }
 
+.divPresentation img{
+   height: 100%;
+}
+
 .divEquipes h3, .divInfos h3{
    font-size: 2rem;
 }
@@ -136,3 +140,32 @@
    box-sizing: border-box;
 }
 
+@media only screen and (max-width: 380px) {
+
+   .divEquipes h3, .divInfos h3{
+      font-size: 1.3rem;
+      font-weight: 800;
+   }
+
+   .divPresentation img{
+      height: 100%;
+   }
+
+   .containerPresentation{
+      height: 30vh;
+   }
+
+   .divCategoriesResults li{
+      height: 4vh;
+   }
+
+   .divCategoriesResults, .divRoster{
+      width: 90%;
+   }
+
+   #result{
+      width: 25px;
+      height: 25px;
+   }
+
+}

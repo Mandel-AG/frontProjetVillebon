@@ -3,24 +3,19 @@ import './evenements.css';
 
 function Evenements(props){
 
-   const posts = props.posts;
-   const filteredPosts = posts.filter(post => (
-      post.typePost.toLowerCase() === 'evenement' 
-   ))
-   console.log(filteredPosts)
-   console.log(filteredPosts)
+   const dataEvents = [...props.events]
 
-
-   const evenements = filteredPosts.map(  evenement =>(
-      <div className='eachEvents' key={ evenement.id }>
-         <h3>{ evenement.title }</h3>
-         <p>{ evenement.description }</p>
-         <img src={ evenement.file} alt={ evenement.name } width='500px' />
-         {/* {(evenement.file) ? <img src={ evenement.file} alt={ evenement.name } /> : (null)} */}
+   const events = dataEvents.map(  event =>(
+      <div className='eachEvents' key={ event.id }>
+         <h3>{ event.title }</h3>
+         <p>{ event.content }</p>
+         <img src={ event.picture} alt={ event.name } width='500px' />
+         <p>{event.date}</p>
+         {/* {(event.file) ? <img src={ event.file} alt={ event.name } /> : (null)} */}
       </div>
    ))
-   // evenements.map(pers =>{
-   //    <div className='divEvenements'>
+   // events.map(pers =>{
+   //    <div className='divevents'>
    //       <img />
    //       <p>Nom</p>
    //    </div>
@@ -30,7 +25,7 @@ function Evenements(props){
          <div className="containerEvenements">
             <h1>Evenements</h1>
             <div className='divEvenements'>
-               { evenements }
+               { events }
             </div>
          </div>
 

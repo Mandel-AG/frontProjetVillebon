@@ -24,7 +24,6 @@
    margin-top: 0;
    margin-bottom: 1vh;
    font-family: 'Playball', cursive;
-
    /* font-family: 'Fredericka the Great'; */
 }
 
@@ -66,6 +65,26 @@
 
 
 @media only screen and (max-width: 400px) {
+
+
+   .logo{
+      background-color: white;
+      width: 100px;
+      height: 40px;
+      left: 3vw;
+      position: absolute;
+}
+
+
+
+   .titleHeader{
+      font-size: 5vh;
+      margin-top: 0;
+      margin-bottom: 1vh;
+      font-family: 'Playball', cursive;
+      /* font-family: 'Fredericka the Great'; */
+   }
+
 
    .containerHeader{
       height: 20vh;
