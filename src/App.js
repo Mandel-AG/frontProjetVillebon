@@ -25,14 +25,14 @@ class App extends Component{
 
   componentDidMount(){
 		axios.all([
-			axios.get('/api/events'),
-			axios.get('/api/scores'),
-			axios.get('/api/medias'),
-			axios.get('/api/clubs'),
-			axios.get('/api/products'),
-			axios.get('/api/gyms'),
-			axios.get('/api/members'),
-			axios.get('/api/teams')
+			axios.get('https://cbbv-back.herokuapp.com/api/events'),
+			axios.get('https://cbbv-back.herokuapp.com/api/scores'),
+			axios.get('https://cbbv-back.herokuapp.com/api/medias'),
+			axios.get('https://cbbv-back.herokuapp.com/api/clubs'),
+			axios.get('https://cbbv-back.herokuapp.com/api/products'),
+			axios.get('https://cbbv-back.herokuapp.com/api/gyms'),
+			axios.get('https://cbbv-back.herokuapp.com/api/members'),
+			axios.get('https://cbbv-back.herokuapp.com/api/teams')
 		])
 
 		.then(axios.spread((events, scores, medias, clubs, products, gyms, members, teams) => {
