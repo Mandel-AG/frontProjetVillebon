@@ -10,7 +10,7 @@ import axios from 'axios';
 // export const members = axios.get('http://localhost:3004/api/members')
 
 
-export const medias =  axios.get('http://localhost:3004/api/medias')
+export const medias =  axios.get('/api/medias')
 .then(medias =>  medias.data )
    // const media = medias.data.map(element => ({
    //    id: element._id,

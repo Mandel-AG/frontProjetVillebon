@@ -23,7 +23,7 @@ class Contact extends Component {
     if(window.confirm('Voulez-vous envoyer ce mail ?')){
       axios({
          method: "POST", 
-         url:"http://localhost:3004/send", 
+         url:"https://cbbv-back.herokuapp.com/send", 
          data: {
             name: values.name,
             email: values.email,
