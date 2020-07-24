@@ -72,9 +72,6 @@ class Categories extends Component{
 			</li>
 		))
 
-
-		const {selectedTeam} = this.state;
-
 		const member = this.state.selectedMembers.map(element =>(
 			<div key={element.id}>
 				<li>{element.firstName} || {element.lastName}</li>

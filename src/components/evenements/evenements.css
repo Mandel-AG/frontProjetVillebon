@@ -11,7 +11,19 @@
 
 .eachEvents{
    margin: 3vh;
-   border: 2px solid black;
+   border: 1px solid black;
+   display: flex;
+   align-items: center;
+}
+
+.eachEventsText {
+   width:65%;
+}
+
+.eachEvents img{
+   width: 30%;
+   margin-right: 15em;
+
 }
 
 .eachEvents h3{

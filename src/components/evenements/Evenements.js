@@ -6,12 +6,15 @@ function Evenements(props){
    const dataEvents = [...props.events]
 
    const events = dataEvents.map(  event =>(
-      <div className='eachEvents' key={ event.id }>
-         <h3>{ event.title }</h3>
-         <p>{ event.content }</p>
+      <div className='eachEvents' key={ event.id }>  
          <img src={ event.picture} alt={ event.name } width='500px' />
-         <p>{event.date}</p>
-         {/* {(event.file) ? <img src={ event.file} alt={ event.name } /> : (null)} */}
+
+         <div className='eachEventText'>
+            <h3>{ event.title }</h3>
+            <p>{ event.content }</p>
+            <p>{event.date}</p>
+         </div>
+
       </div>
    ))
    // events.map(pers =>{
@@ -23,7 +26,7 @@ function Evenements(props){
 
    return(
          <div className="containerEvenements">
-            <h1>Evenements</h1>
+            <h1>Evenements à venir</h1>
             <div className='divEvenements'>
                { events }
             </div>

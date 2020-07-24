@@ -1,7 +1,25 @@
-.containerBoutique{
+.containerShop{
    text-align: center;
 }
 
-.divproduits{
+.containerShop h1{
+   margin-bottom: 1.5em;
+}
+
+
+.eachProduct{
+   width: 30%;
+   margin: 3em;
+}
+
+.productDescription{
+   border-right: 1px solid black;
+   border-left: 1px solid black;
+   border-bottom: 1px solid black;
 
 }
+
+.eachProduct img{
+   width: 100%;
+}
+

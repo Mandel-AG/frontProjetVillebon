@@ -7,17 +7,21 @@ function Boutique(props){
 
 
    const products = dataProducts.map(  product =>(
-      <div className='eachEvents' key={ product.id }>
-         <h3>{ product.name }</h3>
-         <p>{ product.description }</p>
+      <div className='eachProduct' key={ product.id }>
+         
          <img src={ product.picture} alt={ product.name } width='500px' />
+         <div className='productDescription'>
+            <h3>{ product.name }</h3>
+            <p>{ product.description }</p>
+         </div>
+         
          {/* {(evenement.file) ? <img src={ evenement.file} alt={ evenement.name } /> : (null)} */}
       </div>
    ))
    return(
-         <div className="containerBoutique">
+         <div className="containerShop">
             <h1>Produits</h1>
-            <div className='divProduits'>
+            <div className='divProduct'>
                { products }
             </div>
          </div>
