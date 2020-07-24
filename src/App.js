@@ -37,7 +37,6 @@ class App extends Component{
 
 		.then(axios.spread((events, scores, medias, clubs, products, gyms, members, teams) => {
       
-      // console.log(medias)
 			const event = events.data.map(element => ({
         id : element._id,
 				title: element.title,
@@ -129,10 +128,7 @@ class App extends Component{
   
 
   render(){
-    // console.log(medias)
-    console.log(this.state.members)
-    console.log(this.state.teams, 'atate team app.js')
-    // console.log(medias, 'requete media')
+   
     return (
       <Router>
         <div>

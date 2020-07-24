@@ -83,7 +83,7 @@ class Accueil extends Component{
 				{(this.state.loaded) ? (
 					<>
 
-						<div active={true} className='containerAccueilEvenements'>
+						<div className='containerAccueilEvenements'>
 							<div>
 								<h3> Evenements </h3>
 							</div>

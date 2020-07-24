@@ -45,8 +45,6 @@ class Categories extends Component{
 			selectedPicture,
 			selectedMembers
 		})
-
-		console.log(selectedPicture)
 	}
 
 
@@ -62,10 +60,6 @@ class Categories extends Component{
 
 
    render(){
-		console.log(this.state.teams, 'state team');
-		console.log(this.props.teams, 'props  team');
-		console.log(this.props.scores, 'props  score');
-		console.log(this.state.scores, 'state  score');
 
 		const filteredScore = this.state.SelectedScore.map(score => (
 			<li key={Math.random()} >
@@ -81,31 +75,18 @@ class Categories extends Component{
 
 		const {selectedTeam} = this.state;
 
-		console.log(selectedTeam)
-
 		const member = this.state.selectedMembers.map(element =>(
 			<div key={element.id}>
 				<p>{element.firstName} || {element.lastName}</p>
 			</div>
 		))
 
-		const teams = selectedTeam.map(el=>(
-			{
-				name : el.name,
-				picture : el.picture
-			}
-			// console.log(el.picture)
-			// Object.values(el.games)
+		const teamPicture = this.state.selectedTeam.map(element => (
+			<div key={element.id}>
+				<img src={element.picture} alt={element.name} />
+			</div>
 		))
-
-		console.log(teams.name);
-		console.log(teams);
-		console.log(this.state.team);
-
-
-		// const team = selectedTeam.map(element => element.name)
 		
-		console.log(selectedTeam)
 
       return(
          <div className='containerCategories'>
@@ -137,11 +118,7 @@ class Categories extends Component{
 								<div className='divPresentation'>
 									<div className='imagePresentation'>
 
-										<img src={this.state.selectedPicture} 
-											  alt={teams.name}>
-										</img>
-
-										{/* {teams} */}
+										{teamPicture}
 
 									</div>
 								</div>
