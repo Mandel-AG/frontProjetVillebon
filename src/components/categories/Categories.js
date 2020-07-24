@@ -77,12 +77,12 @@ class Categories extends Component{
 
 		const member = this.state.selectedMembers.map(element =>(
 			<div key={element.id}>
-				<p>{element.firstName} || {element.lastName}</p>
+				<li>{element.firstName} || {element.lastName}</li>
 			</div>
 		))
 
 		const teamPicture = this.state.selectedTeam.map(element => (
-			<div key={element.id}>
+			<div className='imagePresentation' key={element.id}>
 				<img src={element.picture} alt={element.name} />
 			</div>
 		))
@@ -116,11 +116,7 @@ class Categories extends Component{
 							<div className='containerPresentation'>
 									<h3> Presentation </h3>
 								<div className='divPresentation'>
-									<div className='imagePresentation'>
-
 										{teamPicture}
-
-									</div>
 								</div>
 							</div>
 							
@@ -128,7 +124,6 @@ class Categories extends Component{
 									<h3> Membres </h3>
 								<div className='divRoster'>
 									<ul className='ulCategoriesRoster'>
-										{/* <p>{selectedTeam.memberList}</p> */}
 										{member}
 									</ul>
 								</div>
