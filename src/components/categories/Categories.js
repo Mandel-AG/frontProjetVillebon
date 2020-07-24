@@ -9,7 +9,10 @@ class Categories extends Component{
          teams:[],
 			selectedTeam:[],
 			scores:[],
-			SelectedScore:[]
+			SelectedScore:[],
+			selectedPicture:'',
+			members:[],
+			selectedMembers:[]
       }
 	}
 
@@ -17,23 +20,33 @@ class Categories extends Component{
 	componentDidMount(){
 				let teams = [...this.props.teams];
 				let scores = [...this.props.scores];
+				let members = [...this.props.members]
 				this.setState({
 					teams,
-					scores 
+					scores,
+					members
 				});
 	}
 
 	filterTeam = (type) =>{
 		const teams = [ ...this.state.teams];
 		const scores = [...this.state.scores];
-		// const filteredTeam = teams.filter( element => element.name.toLowerCase() === type)
+
 		const filteredTeam = teams.filter( element => element.name === type);
 		// const filteredScore = scores.filter( element => element.homeTeam.toLowerCase() === type)
 		const filteredScore = scores.filter( element => element.homeTeam.trim() === type);
+
+		const selectedPicture = this.state.selectedTeam.map( element => element.picture)
+
+		const selectedMembers = this.state.members.filter( element => element.role === 'player' && element.team === type);
 		this.setState({
 			selectedTeam : filteredTeam,
-			SelectedScore : filteredScore
+			SelectedScore : filteredScore,
+			selectedPicture,
+			selectedMembers
 		})
+
+		console.log(selectedPicture)
 	}
 
 
@@ -69,6 +82,12 @@ class Categories extends Component{
 		const {selectedTeam} = this.state;
 
 		console.log(selectedTeam)
+
+		const member = this.state.selectedMembers.map(element =>(
+			<div key={element.id}>
+				<p>{element.firstName} || {element.lastName}</p>
+			</div>
+		))
 
 		const teams = selectedTeam.map(el=>(
 			{
@@ -118,7 +137,7 @@ class Categories extends Component{
 								<div className='divPresentation'>
 									<div className='imagePresentation'>
 
-										<img src={teams.picture} 
+										<img src={this.state.selectedPicture} 
 											  alt={teams.name}>
 										</img>
 
@@ -133,7 +152,7 @@ class Categories extends Component{
 								<div className='divRoster'>
 									<ul className='ulCategoriesRoster'>
 										{/* <p>{selectedTeam.memberList}</p> */}
-										{teams}
+										{member}
 									</ul>
 								</div>
 							</div>

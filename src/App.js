@@ -91,6 +91,7 @@ class App extends Component{
         firstName : element.firstName,
         lastName : element.lastName,
         role : element.role,
+        team : element.team,
         picture : element.picture
       }))
 
@@ -142,7 +143,7 @@ class App extends Component{
           <Switch>
               <Route exact path="/" render={(props) => <Accueil {...props} events={ this.state.events } scores={ this.state.scores } medias={ this.state.medias }/>} />
               <Route exact path="/club" render={(props) => <Club {...props} clubs={ this.state.clubs } members={ this.state.members }  gyms={ this.state.gyms } />} />
-              <Route exact path="/categories" render={(props) => <Categories {...props}  teams={ this.state.teams } scores={ this.state.scores }/>} />
+              <Route exact path="/categories" render={(props) => <Categories {...props}  teams={ this.state.teams } scores={ this.state.scores } members={this.state.members}/>} />
               <Route exact path="/evenements" render={(props) => <Evenements {...props} events={ this.state.events }/>} />
               <Route exact path="/gallery" render={(props) => <Gallery {...props} medias={ this.state.medias }/>} />
               <Route exact path="/contact" render={(props) => <Contact {...props} />} />
