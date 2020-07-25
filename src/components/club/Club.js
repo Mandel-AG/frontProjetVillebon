@@ -13,10 +13,10 @@ class Club extends Component{
    }
 
 
-   componentDidMount(){
+    componentDidMount(){
       const {clubs, members, gyms} = this.props;
 
-      this.setState({
+       this.setState({
          clubs,
          members,
          gyms
@@ -32,13 +32,16 @@ class Club extends Component{
       console.log(this.state.gyms, 'gym');
       console.log(this.props.gyms, 'gym');
 
+      const urlChange = (url) => {
+         url.replace('localhost','127.0.0.1')
+      }
 
       const member = this.state.members.map(member => (
          <div key={member.id}>
             <p>{member.firstName}</p>
             <p>{member.lastName}</p>
             <p>{member.role}</p>
-            <img src={member.picture} alt={member.role}/>
+            <img src={urlChange(member.picture)} alt={member.role}/>
          </div>
       ))
    
@@ -47,7 +50,7 @@ class Club extends Component{
             <p>{gym.name}</p>
             <p>{gym.adress}</p>
             <p>{gym.introduction}</p>
-            <img src={gym.picture} alt={gym.name}/>
+            <img src={urlChange(gym.picture)} alt={gym.name}/>
          </div>
       ))
 
@@ -55,7 +58,7 @@ class Club extends Component{
          <div key={club.id}>
             <p>{club.name}</p>
             <p>{club.introduction}</p>
-            <img src={club.picture} alt={club.name}/>
+            <img src={urlChange(club.picture)} alt={club.name}/>
          </div>
       ))
 

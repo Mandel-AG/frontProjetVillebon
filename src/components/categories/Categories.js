@@ -20,11 +20,17 @@ class Categories extends Component{
 	componentDidMount(){
 				let teams = [...this.props.teams];
 				let scores = [...this.props.scores];
-				let members = [...this.props.members]
+				let members = [...this.props.members];
+				
+				const selectedTeam = teams.filter( element => element.name === 'sm1');
+				
+
+
 				this.setState({
 					teams,
 					scores,
-					members
+					members,
+					selectedTeam
 				});
 	}
 
@@ -111,14 +117,15 @@ class Categories extends Component{
 
 						<div className='containerInfos'>
 							<div className='containerPresentation'>
-									<h3> Presentation </h3>
+									<h2> Presentation </h2>
+									<h3>{this.state.selectedTeam.map(element=> element.name.toUpperCase())}</h3>
 								<div className='divPresentation'>
 										{teamPicture}
 								</div>
 							</div>
 							
 							<div className='containerCategoriesRoster'>
-									<h3> Membres </h3>
+									<h2> Membres </h2>
 								<div className='divRoster'>
 									<ul className='ulCategoriesRoster'>
 										{member}
@@ -127,7 +134,7 @@ class Categories extends Component{
 							</div>
 
 								<div className='containerCategoriesResults'>
-									<h3> Resultats </h3>
+									<h2> Resultats </h2>
 										<div className='divCategoriesResults'>
 											<ul className='ulCategoriesResults'>
 												{filteredScore}

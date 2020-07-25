@@ -18,8 +18,8 @@
    font-size: 2rem;
 }
 
-.categoriesfiltreEquipe{
-
+.categoriesfiltreEquipe:hover{
+   cursor: pointer;
 }
 
 .categoriesfiltreEquipe ul{

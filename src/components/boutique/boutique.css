@@ -7,7 +7,15 @@
 }
 
 
+.divProduct{
+   width: 100%;
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
+}
+
 .eachProduct{
+   display: inline-block;
    width: 30%;
    margin: 3em;
 }
