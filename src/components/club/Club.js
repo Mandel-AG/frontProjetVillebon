@@ -32,53 +32,69 @@ class Club extends Component{
       console.log(this.state.gyms, 'gym');
       console.log(this.props.gyms, 'gym');
 
-      const urlChange = (url) => {
-         url.replace('localhost','127.0.0.1')
-      }
-
-      const member = this.state.members.map(member => (
-         <div key={member.id}>
-            <p>{member.firstName}</p>
-            <p>{member.lastName}</p>
-            <p>{member.role}</p>
-            <img src={urlChange(member.picture)} alt={member.role}/>
-         </div>
-      ))
+      // const member = this.state.members.map(member => (
+      //    <div className="divEachMember" key={Math.random()}>
+      //       <img src={member.picture} alt={member.role}/>
+      //       <p>{member.firstName}</p>
+      //       <p>{member.lastName}</p>
+      //       <p>{member.role}</p>
+      //    </div>
+      // ))
    
+
+
+      const members = this.state.members.filter(element => element.role !== 'player')
+      
+      const member = members.map(member => (
+         <div className="divEachMember" key={Math.random()}>
+            <img src={member.picture} alt={member.role}/>
+
+            <div className="divEachMemberText">
+               <p>{member.role}</p><br/>
+               <p>{member.firstName}</p><br/>
+               <p>{member.lastName}</p><br/>
+            </div>
+         </div>
+
+      ))
+
+
+
       const gym = this.state.gyms.map(gym => (
-         <div key={gym.id}>
-            <p>{gym.name}</p>
-            <p>{gym.adress}</p>
-            <p>{gym.introduction}</p>
-            <img src={urlChange(gym.picture)} alt={gym.name}/>
+         <div className="divEachGym" key={Math.random()}>
+            <img src={gym.picture} alt={gym.name}/>
+
+            <div className="divEachGymText">
+               <p>{gym.name}</p><br/>
+               <p>{gym.adress}</p><br/>
+               <p>{gym.introduction}</p><br/>
+            </div> 
          </div>
       ))
 
       const club = this.state.clubs.map(club => (
-         <div key={club.id}>
-            <p>{club.name}</p>
+         <div key={Math.random()}>
+            <img src={club.picture} alt={club.name}/>
+            <p>{club.name}</p><br/>
             <p>{club.introduction}</p>
-            <img src={urlChange(club.picture)} alt={club.name}/>
          </div>
       ))
-
-
 
       return(
          <>
 
             <div className="containerPresentationClub">
-               <h3>Presentation</h3>
+               <h2>Presentation</h2>
                {club}
             </div> 
             
-            <div className="containerMembresClub">
-               <h3>Membres</h3>
+            <div className="containerMemberClub">
+               <h2>Membres</h2>
                   {member}
             </div>
 
-            <div className="containerGymnasesClub">
-               <h3>Gymnases</h3>
+            <div className="containerGymClub">
+               <h2>Gymnases</h2>
                {gym}
             </div>
 

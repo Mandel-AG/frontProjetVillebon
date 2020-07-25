@@ -1,20 +1,61 @@
 .containerPresentationClub{
-
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 
-.containerMembresClub{
-
+.containerMemberClub{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
-.containerGymnasesClub{
-   
+.containerGymClub{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
-.divChaqueGymnase{
-
+.divEachGym{
+  width: 100%;
+  display: flex;
+  padding: 2em;
 }
 
-.divChaqueMembre{
+.divEachGymText{
+  display: flex;
+  justify-content: center;
+  width: 50%;
+}
 
+.divEachGym img {
+  width: 40%;
+}
+
+
+/* Members */
+
+.divEachMember{
+  width: 25%;
+  display: flex;
+  padding: 2em;
+  flex-direction: column;
+}
+
+.divEachMember img{
+  width: 100%;
+  height: 15em;
+}
+
+.divEachMemberText{
+  display: flex;
+  width: 100% ;
+  justify-content: center;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  border-bottom: 1px solid black;
 }
