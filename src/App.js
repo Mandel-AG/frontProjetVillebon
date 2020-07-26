@@ -104,22 +104,24 @@ class App extends Component{
         games : element.games,
       }))
 
-      { if( media && event && score && club && product && gym && member && team){
-          this.setState({
-            events: event,
-            scores: score,
-            medias:  media,
-            clubs : club,
-            products : product,
-            gyms : gym,
-            members : member,
-            teams : team,
-            loaded:true,
-            selectedFiltreTeam : scores
-          })
-      }
-      else {console.error('une des requetes est null')}
-      }
+      this.setState({
+        events: event,
+        scores: score,
+        medias:  media,
+        clubs : club,
+        products : product,
+        gyms : gym,
+        members : member,
+        teams : team,
+        loaded:true,
+        selectedFiltreTeam : scores
+      })
+      
+      // { if( media && event && score && club && product && gym && member && team){
+         
+      // }
+      // else {console.error('une des requetes est null')}
+      // }
     }))
     .catch((err)=>{
       console.error('un requete n\'est pas etablie')
