@@ -52,18 +52,11 @@ class Accueil extends Component{
 
 
 	render(){
-		// const event = document.querySelector('.containerAccueilEvenements');
-		const events = 
-		this.props.events.map(event => (
-			// if(event.typeevent.toLowerCase() === 'prochainmatch' ){
-			// 	 <li key={Math.random()} > { event.title } </li>
-			// }
-			<li key={Math.random()} > { event.title } </li>
+
+		const events = this.props.events.map(event => (
+			<li key={Math.random()} > {event.date}  -   { event.title }  -  {event.content}</li>
 
 		))
-
-		console.log(this.state.selectedTeam)
-		console.log(this.props.scores)
 
 		const filteredScore = this.state.selectedTeam.map(score => (
 			<li key={Math.random()}  className='d-flex justify-content-around' >

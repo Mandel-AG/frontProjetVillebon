@@ -24,7 +24,7 @@ class Categories extends Component{
 				
 				const selectedTeam = teams.filter( element => element.name === 'sm1');
 				const selectedMembers = members.filter( element => element.team === 'sm1');
-				const SelectedScore = scores.filter(element => element.team === 'sm1');
+				const SelectedScore = scores.filter(element => element.homeTeam === 'sm1');
 
 
 				this.setState({
