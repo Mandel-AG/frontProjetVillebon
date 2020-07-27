@@ -29,8 +29,33 @@ const Gym = (props) => {
   return(
     <div className="containerGymClub">
 
-      <Link to='/club'> Retour </Link>
+        <nav className="navClub">
 
+               <Link to="/club/gym">
+                  <div className="menu menuMin">
+                     <img src='/gym.jpg' />
+                     <h4>GYM</h4>
+                  </div>
+               </Link> 
+
+
+
+               <Link to="/club/intro">
+                  <div className="menu menuMinClub menuMin">
+                     <img src='/club.png' />
+                     <h4>Présentation du Club</h4>
+                  </div>   
+               </Link> 
+
+
+
+               <Link to="/club/members">
+                  <div className="menu menuMin">
+                     <img src='/staff.jpg' />
+                  <h4>Membres</h4>
+                  </div>
+               </Link>
+         </nav>
       <h2>Gymnases</h2>
 
       {gyms.map(gym => (

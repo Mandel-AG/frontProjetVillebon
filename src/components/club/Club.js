@@ -88,23 +88,8 @@ class Club extends Component{
 
          <nav className="navClub">
 
-{/* 
-            <div className="containerPresentationClub">
-               <h2>Presentation</h2>
-               {club}
-            </div> 
-            
-            <div className="containerMemberClub">
-               <h2>Membres</h2>
-                  {member}
-            </div>
-
-            <div className="containerGymClub">
-               <h2>Gymnases</h2>
-               {gym}
-            </div> */}
                <Link to="/club/gym">
-                  <div className="menu">
+                  <div className="menu ">
                      <img src='/gym.jpg' />
                      <h4>GYM</h4>
                   </div>
@@ -123,7 +108,7 @@ class Club extends Component{
 
                <Link to="/club/members">
                   <div className="menu">
-                  <img src='/staff.jpg' />
+                     <img src='/staff.jpg' />
                   <h4>Membres</h4>
                   </div>
                </Link>

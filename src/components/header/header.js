@@ -6,7 +6,7 @@ function Header(props){
    return(
       <div className="containerHeader">
          <div className='logo'>
-            <img src='https://i.pinimg.com/236x/4b/ef/18/4bef184c1d519a0e7a8bfd62bacc5982--face-design-oculto.jpg' 
+            <img src='/logo.png' 
             alt='logo' />
          </div>
          <div>

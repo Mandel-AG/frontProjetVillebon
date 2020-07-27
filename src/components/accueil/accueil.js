@@ -134,6 +134,7 @@ class Accueil extends Component{
 							</div>
 						</div>
 					<Rss/>
+					<h3 className="partenaires">Partenaires</h3>
 					<Partners medias={ this.props.medias }/>
 					</>
 					)
