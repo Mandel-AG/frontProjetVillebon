@@ -83,6 +83,11 @@ class Club extends Component{
 
       return(
          <>
+
+         <h2 className="clubTitle">Club</h2>
+
+         <nav className="navClub">
+
 {/* 
             <div className="containerPresentationClub">
                <h2>Presentation</h2>
@@ -98,11 +103,31 @@ class Club extends Component{
                <h2>Gymnases</h2>
                {gym}
             </div> */}
-               <Link to="/club/gym"> Gym </Link> 
-               <Link to="/club/intro"> Presentation du Club </Link> 
-               <Link to="/club/members"> Membres </Link> 
+               <Link to="/club/gym">
+                  <div className="menu">
+                     <img src='/gym.jpg' />
+                     <h4>GYM</h4>
+                  </div>
+               </Link> 
 
 
+
+               <Link to="/club/intro">
+                  <div className="menu menuClub">
+                     <img src='/club.png' />
+                     <h4>Présentation du Club</h4>
+                  </div>   
+               </Link> 
+
+
+
+               <Link to="/club/members">
+                  <div className="menu">
+                  <img src='/staff.jpg' />
+                  <h4>Membres</h4>
+                  </div>
+               </Link>
+         </nav>
 
          </>
       )

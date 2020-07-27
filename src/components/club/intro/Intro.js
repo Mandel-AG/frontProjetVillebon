@@ -23,14 +23,16 @@ const Gym = (props) => {
 
       {
         clubs.map(club => (
-         <div key={club.id}>
+         <div className="divIntro" key={club.id}>
             <img src={club.picture} alt={club.name}/>
-            <p>{club.name}</p><br/>
-            <p>{club.introduction}</p>
+
+            <div className="divIntroText">
+              <p>{club.name}</p><br/>
+              <p>{club.introduction}</p>
+            </div>
          </div>
       ))
       }
-      <p>oui</p>
     </div>
   )
 }
