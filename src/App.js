@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import axios from 'axios';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import { Header, Accueil, Club, Evenements, Gallery, Contact, Boutique, Categories } from './components/index';
+import { Header, Accueil, Club, Evenements, Gallery, Contact, Boutique, Categories, Gym, Intro, Members} from './components/index';
 // import { medias as mediasss } from './components/utils/request';
 
 
@@ -91,6 +91,7 @@ class App extends Component{
         lastName : element.lastName,
         role : element.role,
         team : element.team,
+        poste : element.position,
         picture : element.picture
       }))
 
@@ -140,12 +141,15 @@ class App extends Component{
           <div>
           <Switch>
               <Route exact path="/" render={(props) => <Accueil {...props} events={ this.state.events } scores={ this.state.scores } medias={ this.state.medias }/>} />
-              <Route exact path="/club" render={(props) => <Club {...props} clubs={ this.state.clubs } members={ this.state.members }  gyms={ this.state.gyms } />} />
+              <Route exact path="/club" render={(props) => <Club />} />
               <Route exact path="/categories" render={(props) => <Categories {...props}  teams={ this.state.teams } scores={ this.state.scores } members={this.state.members}/>} />
               <Route exact path="/evenements" render={(props) => <Evenements {...props} events={ this.state.events }/>} />
               <Route exact path="/gallery" render={(props) => <Gallery {...props} medias={ this.state.medias }/>} />
               <Route exact path="/contact" render={(props) => <Contact {...props} />} />
               <Route exact path="/boutique" render={(props) => <Boutique {...props} products={ this.state.products } />} />
+              <Route exact path="/club/gym" render={(props) => <Gym {...props} gyms={ this.state.gyms } />} />
+              <Route exact path="/club/intro" render={(props) => <Intro {...props} clubs={ this.state.clubs } />} />
+              <Route exact path="/club/members" render={(props) => <Members {...props} members={ this.state.members } />} />
           </Switch>
           </div>
         </div>

@@ -23,14 +23,17 @@ class Categories extends Component{
 				let members = [...this.props.members];
 				
 				const selectedTeam = teams.filter( element => element.name === 'sm1');
-				
+				const selectedMembers = members.filter( element => element.team === 'sm1');
+				const SelectedScore = scores.filter(element => element.team === 'sm1');
 
 
 				this.setState({
 					teams,
 					scores,
 					members,
-					selectedTeam
+					selectedTeam,
+					selectedMembers,
+					SelectedScore
 				});
 	}
 

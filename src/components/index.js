@@ -9,3 +9,6 @@ export { default as Gallery} from './gallery/Gallery';
 export { default as Contact} from './contact/Contact';
 export { default as Boutique} from './boutique/Boutique';
 export { default as Categories} from './categories/Categories';
+export { default as Gym} from './club/Gyms/Gym';
+export { default as Intro} from './club/intro/Intro';
+export { default as Members} from './club/members/Member';
