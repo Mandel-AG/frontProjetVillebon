@@ -22,7 +22,7 @@ const Gym = (props) => {
 
                <Link to="/club/gym">
                   <div className="menu menuMin">
-                     <img src='/gym.jpg' />
+                     <img src='/gym.jpg' alt="gymnase" />
                      <h4>GYM</h4>
                   </div>
                </Link> 
@@ -31,7 +31,7 @@ const Gym = (props) => {
 
                <Link to="/club/intro">
                   <div className="menu menuMinClub menuMin">
-                     <img src='/club.png' />
+                     <img src='/club.png' alt="club" />
                      <h4>Présentation du Club</h4>
                   </div>   
                </Link> 
@@ -40,7 +40,7 @@ const Gym = (props) => {
 
                <Link to="/club/members">
                   <div className="menu menuMin">
-                     <img src='/staff.jpg' />
+                     <img src='/staff.jpg' alt="staff" />
                   <h4>Membres</h4>
                   </div>
                </Link>
@@ -53,7 +53,6 @@ const Gym = (props) => {
             <img src={club.picture} alt={club.name}/>
 
             <div className="divIntroText">
-              <p>{club.name}</p><br/>
               <p>{club.introduction}</p>
             </div>
          </div>

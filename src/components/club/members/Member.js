@@ -35,7 +35,7 @@ const Members = (props) => {
 
                <Link to="/club/gym">
                   <div className="menu menuMin">
-                     <img src='/gym.jpg' />
+                     <img src='/gym.jpg' alt="gymnase" />
                      <h4>GYM</h4>
                   </div>
                </Link> 
@@ -44,7 +44,7 @@ const Members = (props) => {
 
                <Link to="/club/intro">
                   <div className="menu menuMinClub menuMin">
-                     <img src='/club.png' />
+                     <img src='/club.png' alt="club" />
                      <h4>Présentation du Club</h4>
                   </div>   
                </Link> 
@@ -53,7 +53,7 @@ const Members = (props) => {
 
                <Link to="/club/members">
                   <div className="menu menuMin">
-                     <img src='/staff.jpg' />
+                     <img src='/staff.jpg' alt="staff"/>
                   <h4>Membres</h4>
                   </div>
                </Link>
@@ -68,9 +68,8 @@ const Members = (props) => {
              <img src={member.picture} alt={member.poste}/>
  
              <div className="divEachMemberText">
-                <p>{member.poste}</p><br/>
-                <p>{member.firstName}</p><br/>
-                <p>{member.lastName}</p><br/>
+                <p>{member.position}</p><br/>
+                <p>{member.firstName} {member.lastName}</p><br/>
              </div>
           </div>
        ))

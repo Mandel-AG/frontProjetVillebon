@@ -43,11 +43,11 @@ class Categories extends Component{
 
 		const filteredTeam = teams.filter( element => element.name === type);
 		// const filteredScore = scores.filter( element => element.homeTeam.toLowerCase() === type)
-		const filteredScore = scores.filter( element => element.homeTeam.trim() === type);
+		const filteredScore = scores.filter( element => element.homeTeam.trim().toLowerCase() === type.toLowerCase());
 
 		const selectedPicture = this.state.selectedTeam.map( element => element.picture)
 
-		const selectedMembers = this.state.members.filter( element => element.role === 'player' && element.team === type);
+		const selectedMembers = this.state.members.filter( element => element.role.toLowerCase() === 'player' && element.team.toLowerCase() === type.toLowerCase());
 		this.setState({
 			selectedTeam : filteredTeam,
 			SelectedScore : filteredScore,
@@ -56,15 +56,6 @@ class Categories extends Component{
 		})
 	}
 
-
-	// filterResults = (type) => {
-	// 	const results = this.props.results;
-	// 	const newFilter = [ ...results];
-	// 	const filtered = newFilter.filter( element => element.homeTeam.toLowerCase() === type)
-	// 	this.setState({
-	// 		SelectedResults : filtered
-	// 	})
-	// }
 
 
 
@@ -83,7 +74,7 @@ class Categories extends Component{
 
 		const member = this.state.selectedMembers.map(element =>(
 			<div key={element.id}>
-				<li>{element.firstName} || {element.lastName}</li>
+				<li>NOM : {element.firstName}  {element.lastName} - POSTE: {element.position} </li>
 			</div>
 		))
 
@@ -113,7 +104,6 @@ class Categories extends Component{
 									<li onClick={()=>this.filterTeam('u13')} >U13</li>
 									<li onClick={()=>this.filterTeam('u11')} >U11</li>
 									<li onClick={()=>this.filterTeam('u9')} >U9</li>
-									<li onClick={()=>this.filterTeam('u7')} >U7</li>												
 								</ul>
 							</div>
 						</div>
@@ -126,6 +116,12 @@ class Categories extends Component{
 										{teamPicture}
 								</div>
 							</div>
+
+							<div className='categoryInfos'>
+									<h3>Infos</h3>
+									<h4> Prix : {this.state.selectedTeam.map(element=> element.price)} euros.</h4>
+									<h4> Horaires : {this.state.selectedTeam.map(element=> element.schedule)}</h4>
+								</div>
 							
 							<div className='containerCategoriesRoster'>
 									<h2> Membres </h2>

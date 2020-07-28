@@ -91,7 +91,7 @@ class App extends Component{
         lastName : element.lastName,
         role : element.role,
         team : element.team,
-        poste : element.position,
+        position : element.position,
         picture : element.picture
       }))
 

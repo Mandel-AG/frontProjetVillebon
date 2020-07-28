@@ -9,7 +9,6 @@ function Partners(props){
       media.mediaType.toLowerCase() === 'partner'
    ))
 
-   console.log(props.medias)
 
    const mediasList = filteredMedias.map(media =>(
       <div key={media.id}>
