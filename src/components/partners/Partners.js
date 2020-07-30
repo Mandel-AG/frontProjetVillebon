@@ -11,14 +11,16 @@ function Partners(props){
 
 
    const mediasList = filteredMedias.map(media =>(
-      <div key={media.id}>
+      <div key={media.id} className="imgPartner" >
        <img src={ media.picture } alt={ media.name } />
       </div>
    ))
    return(
-      <div className="containerPartners">
-            <div className='divPartners'>
+      <div className="containerPartners  ">
+            <div className='divPartners marquee-rtl marquee-multi-lignes '>
+               <div>
                { mediasList }
+               </div>
             </div>
       </div>
    )
@@ -26,3 +28,5 @@ function Partners(props){
 
 
 export default Partners ;
+
+

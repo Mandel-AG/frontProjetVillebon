@@ -12,6 +12,11 @@
    background-color: #141414;
 }
 
+.imgPartner{
+   padding: 0 16em;
+
+}
+
 .divPartners img{
    height: 20vh;
    width: 20vh;

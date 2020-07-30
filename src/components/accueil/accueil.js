@@ -54,7 +54,8 @@ class Accueil extends Component{
 	render(){
 
 		const events = this.props.events.map(event => (
-			<li key={Math.random()} > {event.date}  -   { event.title }  -  {event.content}</li>
+			
+			<li className='marquee-rtl marquee-multi-lignes' key={Math.random()} > <p>{ event.title }  -  {event.content}</p> </li>
 
 		))
 
@@ -89,7 +90,7 @@ class Accueil extends Component{
 
 
 
-						<div className={(this.state.toggle) ? ('hidden') : ('containerProchainMatchs show')}>
+						{/* <div className={(this.state.toggle) ? ('hidden') : ('containerProchainMatchs show')}>
 							<div>
 								<h3> Prochain Matchs </h3>
 							</div>
@@ -98,7 +99,7 @@ class Accueil extends Component{
 										{events}
 									</ul>
 							</div>
-						</div>
+						</div> */}
 
 						<div className='containerResultats'>
 							<div>

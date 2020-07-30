@@ -1,12 +1,12 @@
 .divEachMember{
-  width: 25%;
+  width: 20em;
   display: flex;
   padding: 2em;
   flex-direction: column;
 }
 
 .divEachMember img{
-  width: 100%;
+  width: 15em;
   height: 15em;
 }
 

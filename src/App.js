@@ -74,6 +74,7 @@ class App extends Component{
         id: element._id,
         name : element.name,
         description : element.description,
+        price : element.price,
         picture : element.picture
       }))
 

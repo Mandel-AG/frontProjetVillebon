@@ -67,7 +67,7 @@ class Contact extends Component {
          <div className='divInputContact'>
 
             <h3>Vous pouvez nous contacter directement ici.</h3>
-            <p>Nous vous repondrons dans les plsu bref delais</p>
+            <p>Nous vous répondrons dans les plus bref délais</p>
             <Formik
                onSubmit={this.submit}
                initialValues={{name: '', email: '', message: ''}}

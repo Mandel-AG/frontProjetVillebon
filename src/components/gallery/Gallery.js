@@ -39,6 +39,7 @@ class Gallery extends Component{
          <div className='eachMedia' key={media.id}>
             <img src={ media.picture } alt={ media.name } />
             <p>{ media.name }</p>
+            <p>{ media.description }</p>
          </div>
       ))
             

@@ -31,6 +31,65 @@
    align-items: center;
 }
 
+
+
+
+
+/*------------------------*/
+
+/* Défilement de droite à gauche */
+.marquee-rtl {
+   overflow: hidden; /* important */
+ }
+ .marquee-rtl > p {
+   display: inline-block; /* important */
+   white-space: nowrap; /* important */
+   animation: defilement-rtl 30s infinite linear; /* défilement */
+   cursor: pointer;
+   padding: 10px 2em 10px 100%;
+ }
+ .marquee-rtl:hover > p {
+   animation-play-state: paused; /* met en pause le défilement */
+ }
+
+ /*images*/
+
+ .marquee-rtl > div {
+   display: inline-block; /* important */
+   white-space: nowrap; /* important */
+   display: flex;
+   flex-direction: row;
+   animation: defilement-rtl 15s infinite linear; /* défilement */
+   cursor: pointer;
+   padding: 10px 2em 10px 200%;
+ }
+
+ .marquee-rtl:hover > div {
+   animation-play-state: paused; /* met en pause le défilement */
+ }
+
+
+ /* .marquee-rtl > div:first-letter {
+   font-weight: 700;
+   color: #F00;
+ } */
+ @keyframes defilement-rtl {
+   0% {
+     -webkit-transform: translate(0);
+     transform: translate(0);
+   }
+   100% {
+     -webkit-transform: translate(-100%);
+     transform: translate(-100%);
+   }
+ }
+
+
+
+/*------------------------*/
+
+
+
 /* Evenement */
 
 .containerAccueilEvenements{
@@ -69,7 +128,6 @@
    height: 5vh;
    margin: 1.5px 0;
    font-size: 1.3rem;
-   overflow-x: scroll;
    white-space: nowrap;
 }
 
@@ -126,6 +184,10 @@
    align-items: center;
    flex-direction: column;
    margin-bottom: 3vh;
+}
+
+.imgPartner{
+   margin-right: 0 16em;
 }
 
 /* Resultats */
@@ -207,16 +269,15 @@
    background-color: whitesmoke;
    color: #141414;
    width: 100%;
-   height: 5vh;
+   min-height: 6vh;
    margin: 3px 0;
    font-size: 1rem;
    list-style: none;
    display: flex;
    justify-content: center;
    align-items: center;
-   overflow-x: auto;
+   position: relative;
 }
-
 
 
 .containerProchainMatchs h3, .containerResultats h3, .containerAccueilEvenements h3{
@@ -227,12 +288,18 @@
 }
 
 #result{
-   width: 30px;
-   height: 30px;
+   position: absolute;
+   left: 0.4em;
+   width: 6%;
+   height: 80%;
 }
 
 
-@media only screen and (max-width: 380px) {
+
+
+
+
+@media only screen and (max-width: 500px) {
 
    .divProchainMatch li, .divResultats li, .divAccueilEvenements li{
       background-color: whitesmoke;
@@ -245,7 +312,7 @@
 
 
    .divResultats li{
-      font-size: 0.5rem;
+      font-size: 0.8rem;
    }
 
 
@@ -280,10 +347,19 @@
       font-size: 0.9rem;
    }
 
+   /* .ulAccueilResultats img{
+      display: none;
+   } */
+
    #result{
-      width: 15px;
-      height: 15px;
+      display: none;
    }
    
 
+}
+@media only screen and (max-width: 900px) {
+   #result{
+      display: none;
+   }
+   
 }

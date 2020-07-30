@@ -41,3 +41,16 @@
    text-align: center;
    width: 100%;  
 }
+
+
+@media only screen and (max-width: 700px) {
+
+   .divGallery{
+      flex-direction: column;
+      align-items: center;
+   }
+
+   .eachMedia{
+      margin-bottom: 3em;
+   }
+}

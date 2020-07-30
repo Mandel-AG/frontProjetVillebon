@@ -65,7 +65,7 @@
 
 
 .imagePresentation img{
-   width: 100%;
+   width: 70%;
    height: 100%;
 }
 
@@ -161,7 +161,7 @@
 .divCategoriesResults li img{
    position: absolute;
    left: 0.4em;
-   top:0.3em;
+   top:0.2em;
 }
 
 
@@ -178,16 +178,36 @@
       font-weight: 800;
    }
 
-   .divPresentation img{
-      height: 100%;
-   }
 
    .containerPresentation{
       height: 30vh;
    }
 
+   .containerInfos li {
+      font-size: 0.8em;
+      height: 6vh;
+   }
+
+
+   .imagePresentation{
+      width: 100%;
+   }
+
+   .imagePresentation img{
+      width: 100%;
+   }
+
+   .categoryInfos{
+      margin: 3em 0;
+   }
+
    .divCategoriesResults li{
-      height: 4vh;
+      height: 6vh;
+   }
+
+   .categoryInfos h4{
+      font-size: 1em;
+
    }
 
    .divCategoriesResults, .divRoster{
@@ -197,6 +217,17 @@
    #result{
       width: 25px;
       height: 25px;
+   }
+
+
+   .divEquipes{
+      width: 15%;
+   }
+
+
+
+   .divEquipes h3{
+      display: none;
    }
 
 }

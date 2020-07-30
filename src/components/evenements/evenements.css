@@ -71,3 +71,19 @@
    box-sizing: border-box;
 
 } */
+
+
+
+@media only screen and (max-width: 900px) {
+
+   .eachEvents{
+      flex-direction: column;
+      align-items: center;
+   }
+
+   .eachEvents img{
+      width: 100%;
+      margin: 0;
+   }
+
+}
