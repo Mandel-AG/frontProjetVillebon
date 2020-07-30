@@ -11,16 +11,7 @@ class Gallery extends Component{
    }
 
   
-   
 
-   // const filteredMedia = (type) =>{  medias.filter(media => (
-   //    media.typeMedia.toLowerCase() === type 
-   // ))};
-   
-
-   // const mediasList = filteredMedia.map(  media =>(
-   //       <img src={ media.file} alt={ media.name } width='500px' />
-   // ))
 
 
       filterMedias = (type) => {

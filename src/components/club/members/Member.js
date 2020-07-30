@@ -16,17 +16,6 @@ const Members = (props) => {
 
  const filteredMembers = members.filter(element => element.role === 'staff')
       
-      // const member = members.map(member => (
-      //    <div className="divEachMember" key={Math.random()}>
-      //       <img src={member.picture} alt={member.role}/>
-
-      //       <div className="divEachMemberText">
-      //          <p>{member.role}</p><br/>
-      //          <p>{member.firstName}</p><br/>
-      //          <p>{member.lastName}</p><br/>
-      //       </div>
-      //    </div>
-      // ))
 
   return(
     <div className="containerMemberClub">

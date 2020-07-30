@@ -16,30 +16,36 @@ class Categories extends Component{
       }
 	}
 
+
 	
-	componentDidMount(){
-				let teams = [...this.props.teams];
-				let scores = [...this.props.scores];
-				let members = [...this.props.members];
+
+	
+	component(){
+				// let teams = [...this.props.teams];
+				// let scores = [...this.props.scores];
+				// let members = [...this.props.members];
 				
-				const selectedTeam = teams.filter( element => element.name === 'sm1');
-				const selectedMembers = members.filter( element => element.team === 'sm1');
-				const SelectedScore = scores.filter(element => element.homeTeam === 'sm1');
+				const selectedTeam = this.props.teams.filter( element => element.name === 'sm1');
+				const selectedMembers = this.props.members.filter( element => element.team === 'sm1');
+				const SelectedScore = this.props.scores.filter(element => element.homeTeam === 'sm1');
 
 
 				this.setState({
-					teams,
-					scores,
-					members,
+					// teams,
+					// scores,
+					// members,
 					selectedTeam,
 					selectedMembers,
 					SelectedScore
 				});
 	}
 
+
+	
+
 	filterTeam = (type) =>{
-		const teams = [ ...this.state.teams];
-		const scores = [...this.state.scores];
+		const teams = [ ...this.props.teams];
+		const scores = [...this.props.scores];
 
 		const filteredTeam = teams.filter( element => element.name === type);
 		// const filteredScore = scores.filter( element => element.homeTeam.toLowerCase() === type)
@@ -47,7 +53,7 @@ class Categories extends Component{
 
 		const selectedPicture = this.state.selectedTeam.map( element => element.picture)
 
-		const selectedMembers = this.state.members.filter( element => element.role.toLowerCase() === 'player' && element.team.toLowerCase() === type.toLowerCase());
+		const selectedMembers = this.props.members.filter( element => element.role.toLowerCase() === 'player' && element.team.toLowerCase() === type.toLowerCase());
 		this.setState({
 			selectedTeam : filteredTeam,
 			SelectedScore : filteredScore,
@@ -153,3 +159,5 @@ class Categories extends Component{
 
 
 export default Categories;
+
+
