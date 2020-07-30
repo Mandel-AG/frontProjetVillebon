@@ -53,6 +53,8 @@ class Accueil extends Component{
 
 	render(){
 
+
+
 		const events = this.props.events.map(event => (
 			
 			<li className='marquee-rtl marquee-multi-lignes' key={Math.random()} > <p>{ event.title }  -  {event.content}</p> </li>

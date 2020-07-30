@@ -1,13 +1,37 @@
-import React, { useState } from 'react';
-import axios from 'axios';
+import React, {useState, useEffect} from 'react';
+import RSSParser from 'rss-parser';
 import './rss.css';
+import { Link } from "react-router-dom";
 
-function Rss(props){
-  const [ffbb, setffbb] = useState([]);
-  
 
-  return(
-    <div className='containerRss'>
+
+
+const RssFeed = () => {
+  const [FFBB, setFFBB] = useState([])
+  const [NBA, setNBA] = useState([])
+
+  useEffect(() => {
+    const CORS_PROXY = "https://cors-anywhere.herokuapp.com/"
+    let parser = new RSSParser();
+    parser.parseURL(`${CORS_PROXY}http://www.ffbb.com/rss2.xml`, function (err, feed) {
+      if (err) throw err;
+      setFFBB(feed.items)
+    })
+
+    parser.parseURL(`${CORS_PROXY}https://nba-infos.webnode.fr/rss/actualites.xml`, function (err, feed) {
+      if (err) throw err;
+      setNBA(feed.items)
+      console.log(feed.items)
+
+    })
+
+
+
+  }, [])
+
+    return (
+
+      <div className='containerRss'>
 
       <div className='containerRssFFBB'>
         <div>
@@ -15,11 +39,17 @@ function Rss(props){
         </div>
         <div className='divRssFFBB'>
             <ul className='ulRssFFBB'>
-              {/* { fluxFFBB } */}
-
+            {FFBB.map((item, i) => (
+              <a href={item.link} key={i} >
+            <li >
+             {item.contentSnippet} 
+             </li></a>
+        ))}
             </ul>
         </div>
       </div>
+
+
 
       <div className='containerRssNBA'>
         <div>
@@ -27,13 +57,27 @@ function Rss(props){
         </div>
         <div className='divRssNBA'>
             <ul className='ulRssNBA'>
-              {/* <li>{ fluxFFBB }</li> */}
+              {NBA.map((item, i) => (
+                <li key={i}> {item.contentSnippet} </li>
+              ))}
             </ul>
         </div>
       </div>
     </div>
-  )
-}
+      
+    // <div>
+    //     <h1>RSS Feed</h1>
+    //     <p>{feed.title}</p>
 
+    //     {feed.map((item, i) => (
+    //         <div key={i}>
+    //             <h1>{item.title}</h1>
+    //             <p>{item.description}</p>
+    //         </div>
+    //     ))}
+        
+    // </div>
+    );
+  }
 
-export default Rss;
+export default RssFeed

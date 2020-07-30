@@ -114,6 +114,12 @@ class Categories extends Component{
 							</div>
 						</div>
 
+						<div>
+    
+
+
+							</div>
+
 						<div className='containerInfos'>
 							<div className='containerPresentation'>
 									<h2> Presentation </h2>
