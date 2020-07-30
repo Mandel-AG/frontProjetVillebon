@@ -65,16 +65,14 @@
 }
 
 
-@media only screen and (max-width: 400px) {
-
-
+@media only screen and (max-width: 735px) {
    .logo{
-      background-color: white;
-      width: 100px;
-      height: 40px;
-      left: 3vw;
-      position: absolute;
+      display: none;
+   }
 }
+
+
+@media only screen and (max-width: 400px) {
 
 
 
