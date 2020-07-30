@@ -17,12 +17,6 @@ function Evenements(props){
 
       </div>
    ))
-   // events.map(pers =>{
-   //    <div className='divevents'>
-   //       <img />
-   //       <p>Nom</p>
-   //    </div>
-   // })
 
    return(
          <div className="containerEvenements">

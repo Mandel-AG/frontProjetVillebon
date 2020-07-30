@@ -18,15 +18,11 @@ const RssFeed = () => {
       setFFBB(feed.items)
     })
 
-    parser.parseURL(`${CORS_PROXY}https://nba-infos.webnode.fr/rss/actualites.xml`, function (err, feed) {
+    parser.parseURL(`${CORS_PROXY}https://www.parlons-basket.com/feed/`, function (err, feed) {
       if (err) throw err;
       setNBA(feed.items)
-      console.log(feed.items)
 
     })
-
-
-
   }, [])
 
     return (
@@ -42,7 +38,7 @@ const RssFeed = () => {
             {FFBB.map((item, i) => (
               <a href={item.link} key={i} >
             <li >
-             {item.contentSnippet} 
+            <strong>{item.pubDate}</strong> - {item.contentSnippet} 
              </li></a>
         ))}
             </ul>
@@ -58,25 +54,13 @@ const RssFeed = () => {
         <div className='divRssNBA'>
             <ul className='ulRssNBA'>
               {NBA.map((item, i) => (
-                <li key={i}> {item.contentSnippet} </li>
+                <li key={i} > <strong>{item.pubDate.replace('+0000','')}</strong>  - {item.contentSnippet} </li>
               ))}
             </ul>
         </div>
       </div>
     </div>
       
-    // <div>
-    //     <h1>RSS Feed</h1>
-    //     <p>{feed.title}</p>
-
-    //     {feed.map((item, i) => (
-    //         <div key={i}>
-    //             <h1>{item.title}</h1>
-    //             <p>{item.description}</p>
-    //         </div>
-    //     ))}
-        
-    // </div>
     );
   }
 

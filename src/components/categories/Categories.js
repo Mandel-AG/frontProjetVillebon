@@ -21,9 +21,7 @@ class Categories extends Component{
 
 	
 	component(){
-				// let teams = [...this.props.teams];
-				// let scores = [...this.props.scores];
-				// let members = [...this.props.members];
+
 				
 				const selectedTeam = this.props.teams.filter( element => element.name === 'sm1');
 				const selectedMembers = this.props.members.filter( element => element.team === 'sm1');
@@ -31,9 +29,6 @@ class Categories extends Component{
 
 
 				this.setState({
-					// teams,
-					// scores,
-					// members,
 					selectedTeam,
 					selectedMembers,
 					SelectedScore
@@ -48,7 +43,6 @@ class Categories extends Component{
 		const scores = [...this.props.scores];
 
 		const filteredTeam = teams.filter( element => element.name === type);
-		// const filteredScore = scores.filter( element => element.homeTeam.toLowerCase() === type)
 		const filteredScore = scores.filter( element => element.homeTeam.trim().toLowerCase() === type.toLowerCase());
 
 		const selectedPicture = this.state.selectedTeam.map( element => element.picture)
@@ -94,11 +88,6 @@ class Categories extends Component{
       return(
          <div className='containerCategories'>
 
-			{/* <div className='divResultats'>
-						<ul className='ulAccueilResultats'>
-							{filteredScore}
-						</ul>
-			</div> */}
 						<div className='divEquipes'>
 							<h3>Equipes</h3>
 							<div className='categoriesfiltreEquipe'>
@@ -158,7 +147,6 @@ class Categories extends Component{
 						
 			</div>
 
-         // </div>
       )
    }
 }

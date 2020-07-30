@@ -32,14 +32,6 @@ class Accueil extends Component{
 		})
 	}
 
-	toggle = (e) =>{
-		// this.setState({
-		// 	toggle:!this.state.toggle
-		// })
-		// const base = true
-		// e.target.active = !e.target.active
-		console.log(e.getAttribute('class'))
-	}
 
 
 	componentDidMount(){

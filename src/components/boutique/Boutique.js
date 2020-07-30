@@ -15,8 +15,6 @@ function Boutique(props){
             <p>{ product.description }</p>
             <p>{ product.price}</p>
          </div>
-         
-         {/* {(evenement.file) ? <img src={ evenement.file} alt={ evenement.name } /> : (null)} */}
       </div>
    ))
    return(

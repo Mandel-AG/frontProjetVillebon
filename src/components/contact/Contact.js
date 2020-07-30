@@ -4,21 +4,9 @@ import {Formik} from 'formik'
 import axios from 'axios';
 
 class Contact extends Component {
-//   constructor(props){
-//      super(props)
-
-
-//    //   this.state = {
-//    //      name:'',
-//    //      email:'',
-//    //      message:''
-//    //   }
-//   }
 
 
   submit = (values, actions) => {
-    console.log(values.name);
-    console.log(actions)
 
     if(window.confirm('Voulez-vous envoyer ce mail ?')){
       axios({

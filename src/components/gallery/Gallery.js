@@ -10,9 +10,6 @@ class Gallery extends Component{
       }
    }
 
-  
-
-
 
       filterMedias = (type) => {
          const medias = this.props.medias;
@@ -21,7 +18,6 @@ class Gallery extends Component{
          this.setState({
             filteredMedias : filtered
          })
-         console.log(this.state.filteredMedias)
       }
       
 
