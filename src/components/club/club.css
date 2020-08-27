@@ -72,8 +72,6 @@
   display: flex;
   width: 100% ;
   justify-content: center;
-  border-left: 2px solid black;
-  border-right: 2px solid black;
   border-bottom: 2px solid black;
   flex-wrap: wrap;
 }
