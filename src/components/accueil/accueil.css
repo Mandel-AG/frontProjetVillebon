@@ -46,7 +46,7 @@
    white-space: nowrap; /* important */
    animation: defilement-rtl 30s infinite linear; /* défilement */
    cursor: pointer;
-   padding: 10px 2em 10px 100%;
+   padding: 5px 2em 10px 100%;
  }
  .marquee-rtl:hover > p {
    animation-play-state: paused; /* met en pause le défilement */
