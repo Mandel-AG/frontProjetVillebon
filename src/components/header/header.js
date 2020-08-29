@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link} from 'react-router-dom'
+import {NavLink} from 'react-router-dom'
 import './header.css';
 
 function Header(props){
@@ -15,13 +15,13 @@ function Header(props){
          </div>
          <nav>
             <ul className='ulHeader'>
-               <Link className='link' to='/'> Accueil </Link>
-               <Link className='link' to='/club'> Club </Link>
-               <Link className='link' to='/categories' > Categorie </Link>
-               <Link className='link' to='/evenements' > Evenement </Link>
-               <Link className='link' to='/gallery'> Gallery </Link>
-               <Link className='link' to='/contact'> Contact </Link>
-               <Link className='link' to='/boutique'> Boutique </Link>
+               <NavLink className='link' activeClassName='underline' exact to='/'> Accueil </NavLink>
+               <NavLink className='link' activeClassName='underline' to='/club'> Club </NavLink>
+               <NavLink className='link' activeClassName='underline' to='/categories' > Categorie </NavLink>
+               <NavLink className='link' activeClassName='underline' to='/evenements' > Evenement </NavLink>
+               <NavLink className='link' activeClassName='underline' to='/gallery'> Gallery </NavLink>
+               <NavLink className='link' activeClassName='underline' to='/contact'> Contact </NavLink>
+               <NavLink className='link' activeClassName='underline' to='/boutique'> Boutique </NavLink>
             </ul>
          </nav>
       </div>

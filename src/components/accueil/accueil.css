@@ -230,7 +230,7 @@
 }
 
 .blockDroitResultats p{
-   font-size: 1.6rem;
+   font-size: 1.2rem;
    margin: 0.1vh;
 }
 
@@ -295,7 +295,21 @@
 }
 
 
+@media only screen and (max-width: 900px) {
+   #result{
+      display: none;
+   }
 
+   .AccueilfiltreEquipe ul li{
+      margin: -4px;
+   }
+
+
+   .blockDroitResultats p{
+      font-size: 0.9rem;
+   }
+   
+}
 
 
 
@@ -339,7 +353,7 @@
 
 
    .blockDroitResultats p{
-      font-size: smaller;
+      font-size: 0.3rem;
       margin-bottom: 1vh;
    }
 
@@ -357,9 +371,11 @@
    
 
 }
-@media only screen and (max-width: 900px) {
-   #result{
-      display: none;
+
+@media only screen and (max-width: 470px) {
+
+   .AccueilfiltreEquipe ul li{
+      margin: -10px;
    }
-   
+
 }

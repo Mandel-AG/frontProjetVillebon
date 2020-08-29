@@ -64,6 +64,10 @@
    height: 3.5vh;
 }
 
+.underline{
+   border-bottom: 2px solid yellow;
+}
+
 
 @media only screen and (max-width: 735px) {
    .logo{
@@ -86,7 +90,7 @@
 
 
    .containerHeader{
-      height: 20vh;
+      height: 22vh;
       margin-bottom: 3vh;
    }
 

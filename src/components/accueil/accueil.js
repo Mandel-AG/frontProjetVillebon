@@ -104,7 +104,7 @@ class Accueil extends Component{
 										{filteredScore}
 									</ul>
 									<div className='blockDroitResultats'>
-										<p>Equipes</p>
+										<p>Choissisez une équipe</p>
 										<div className='AccueilfiltreEquipe'>
 											<ul>
 												<li onClick={this.allresults} >Tout</li>

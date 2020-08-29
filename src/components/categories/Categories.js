@@ -89,7 +89,7 @@ class Categories extends Component{
          <div className='containerCategories'>
 
 						<div className='divEquipes'>
-							<h3>Equipes</h3>
+							<h3>Choisissez une équipe</h3>
 							<div className='categoriesfiltreEquipe'>
 								<ul>
 									<li onClick={()=>this.filterTeam('sm1')} >SM1</li>
