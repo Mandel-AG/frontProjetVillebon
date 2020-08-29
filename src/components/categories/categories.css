@@ -171,7 +171,7 @@
    text-align: center;
 }
 
-@media only screen and (max-width: 380px) {
+@media only screen and (max-width: 545px) {
 
    .divEquipes h3, .divInfos h3{
       font-size: 1.3rem;
