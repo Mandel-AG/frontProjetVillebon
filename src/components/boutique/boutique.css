@@ -1,0 +1,38 @@
+.containerShop{
+   text-align: center;
+}
+
+.containerShop h1{
+   margin-bottom: 1.5em;
+}
+
+
+.divProduct{
+   width: 100%;
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
+}
+
+.eachProduct{
+   display: inline-block;
+   width: 30%;
+   margin: 3em;
+}
+
+.productDescription{
+   border: 2px solid black;
+}
+
+.eachProduct img{
+   width: 100%;
+}
+
+@media only screen and (max-width: 1000px) {
+
+   .eachProduct{
+      width: 80%;
+   }
+
+
+}

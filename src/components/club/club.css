@@ -1,0 +1,242 @@
+.clubTitle{
+  text-align: center;
+  font-size: 4em;
+}
+
+
+.containerPresentationClub{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+.containerMemberClub{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.containerGymClub{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.containerGymClub h2, .containerMemberClub h2, .containerPresentationClub h2{
+  text-decoration: underline;
+}
+
+
+
+
+.divEachGym{
+  width: 100%;
+  display: flex;
+  padding: 2em;
+}
+
+.divEachGymText{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 50%;
+  font-size: 1.3em;
+  align-items: center;
+  padding-left: 2em;
+}
+
+.divEachGym img {
+  width: 40%;
+}
+
+
+/* Members */
+
+.divEachMember{
+  width: 25%;
+  display: flex;
+  padding: 2em;
+  flex-direction: column;
+}
+
+.divEachMember img{
+  width: 100%;
+  height: 15em;
+}
+
+.divEachMemberText{
+  display: flex;
+  width: 100% ;
+  justify-content: center;
+  border-left: 2px solid black;
+  border-right: 2px solid black;
+  border-bottom: 2px solid black;
+  flex-wrap: wrap;
+}
+
+.divEachMemberText p{
+  width: 100%;
+  text-align: center;
+  font-weight: 700;
+}
+
+
+/* Intro */
+
+.divIntro{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 2em;
+  justify-content: center;
+}
+
+.divIntroText{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  font-size: 1.4em;
+  padding: 1.4em;
+  margin-top: 2em;
+}
+
+.divIntro img {
+  width: 45%;
+}
+
+
+
+
+
+
+
+.navClub{
+  display: flex;
+  justify-content: center;
+}
+
+.navClub h2{
+  text-align: center;
+}
+
+
+
+.menu{
+  width: 20em;
+  height: 20em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  margin: 2em;
+  position: relative;
+  overflow: hidden;
+}
+
+.menu h4{
+  font-weight: 900;
+  font-size: 4em;
+  text-decoration: none;
+  color: orange;
+  z-index: 1;
+  text-align: center;
+}
+
+.menuClub h4{
+  font-size: 3.3em;
+}
+
+
+
+.menuBackground{
+  width: 100%;
+  background-image: url('/gym.jpg');
+  background-size: contain;
+}
+
+
+.menu img{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  filter: grayscale(90%);
+}
+
+
+.menu:hover {
+  filter: grayscale(0%);
+  transform: scale(1.1);
+}
+
+
+a:hover{
+  text-decoration: none;
+}
+
+
+
+@media only screen and (max-width: 1200px) {
+
+
+
+  .navClub{
+    flex-direction: column;
+  }
+
+
+  .navClub a{
+    align-self: center;
+  }
+
+  .menu h4 {
+    font-size: 2em;
+  }
+
+  .menuClub h4{
+    font-size: 1rem;
+  }
+
+
+  .menu{
+    width: 10em;
+    height: 10em;
+  }
+
+  .divEachMember {
+    width: 40%;
+  }
+
+  .divEachGym{
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+
+@media only screen and (max-width: 400px) {
+
+  .divEachGym img{
+    width: 70%;
+  }
+
+  .divEachGymText{
+    font-size: 1em;
+  }
+
+  .menuMin{
+    width: 5em;
+    height: 5em;
+  }
+
+
+  .divEachMember {
+    width: 80%;
+  }
+}
+
