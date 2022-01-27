@@ -49,7 +49,8 @@ class Accueil extends Component{
 
 		const events = this.props.events.map(event => (
 			
-			<li className='marquee-rtl marquee-multi-lignes' key={Math.random()} > <p>{ event.title }  -  {event.content}</p> </li>
+			<li className='accueilEvenements__eachEvent' key={Math.random()} > <p>{ event.title }  -  {event.content}</p> </li>
+			// <li className='marquee-rtl marquee-multi-lignes' key={Math.random()} > <p>{ event.title }  -  {event.content}</p> </li>
 
 		))
 

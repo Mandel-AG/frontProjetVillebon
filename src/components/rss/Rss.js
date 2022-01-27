@@ -1,7 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import RSSParser from 'rss-parser';
 import './rss.css';
-import { Link } from "react-router-dom";
 
 
 
