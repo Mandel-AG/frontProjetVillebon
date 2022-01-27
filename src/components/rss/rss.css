@@ -1,136 +1,140 @@
-.containerRss{
-   display: flex;
-   align-items: center;
-   justify-content: space-around;
-   margin-bottom: 7vh;
-   width: 100%;
+.containerRss {
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	margin-bottom: 7vh;
+	width: 100%;
 }
 
-
-.divRssFFBB{
-   width: 100%;
-   background-color: #141414;
-   color: whitesmoke;
-   text-align: center;
-   padding: 3px;
-   overflow-y: auto;
-   height: 22vh;
+.divRssFFBB {
+	width: 100%;
+	background-color: #141414;
+	color: whitesmoke;
+	text-align: center;
+	padding: 3px;
+	overflow-y: auto;
+	height: 22vh;
 }
 
-.ulRssFFBB{
-   padding: 0;
-   display: flex;
-   justify-content: center;
-   flex-direction: column;
-   justify-content: space-between;
-   list-style: none;
-   margin: 0;
+.ulRssFFBB {
+	padding: 0;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	justify-content: space-between;
+	list-style: none;
+	margin: 0;
 }
 
-
-
-.divRssFFBB li{
-   background-color: whitesmoke;
-   color: #141414;
-   width: 100%;
-   height: 5vh;
-   margin: 3px 0;
-   font-size: 1rem;
-   overflow: hidden;
+/* Scroll bar RSS*/
+.divRssFFBB::-webkit-scrollbar,
+.divRssNBA::-webkit-scrollbar {
+	width: 8px;
 }
 
+.divRssFFBB::-webkit-scrollbar-track,
+.divRssNBA::-webkit-scrollbar-track {
+	background: #f2b532;
+}
 
+.divRssFFBB::-webkit-scrollbar-thumb,
+.divRssNBA::-webkit-scrollbar-thumb {
+	background: #000000;
+}
+
+.divRssFFBB li {
+	background-color: whitesmoke;
+	color: #141414;
+	width: 100%;
+	height: 6vh;
+	margin: 3px 0;
+	font-size: 1rem;
+	overflow: hidden;
+}
 
 /* NBA */
-.containerRssNBA{
-   width:45% ;
+.containerRssNBA {
+	width: 45%;
 }
 
-.divRssNBA{
-   width: 100%;
-   background-color: #141414;
-   color: whitesmoke;
-   text-align: center;
-   padding: 3px;
-   overflow-y: auto;
-   height: 22vh;
+.divRssNBA {
+	width: 100%;
+	background-color: #141414;
+	color: whitesmoke;
+	text-align: center;
+	padding: 3px;
+	overflow-y: auto;
+	height: 22vh;
 }
 
-.ulRssNBA{
-   padding: 0;
-   display: flex;
-   justify-content: center;
-   flex-direction: column;
-   justify-content: space-between;
-   list-style: none;
-   margin: 0;
+.ulRssNBA {
+	padding: 0;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	justify-content: space-between;
+	list-style: none;
+	margin: 0;
 }
 
-
-
-.divRssNBA li{
-   background-color: whitesmoke;
-   color: #141414;
-   width: 100%;
-   height: 5vh;
-   margin: 3px 0;
-   font-size: 1rem;
+.divRssNBA li {
+	background-color: whitesmoke;
+	color: #141414;
+	width: 100%;
+	height: 6vh;
+	margin: 3px 0;
+	font-size: 1rem;
 }
 
-
-.containerRssFFBB, .containerRssNBA{
-   display: flex;
-   flex-direction: column;
-   align-items: center;
-   width: 45%;
-   /* Test */
-   margin: 1em;
+.containerRssFFBB,
+.containerRssNBA {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 45%;
+	/* Test */
+	margin: 1em;
 }
 
-
-
-.containerRssFFBB h3, .containerRssNBA h3{
-   font-size: medium;
-   border-bottom: 2px solid yellow;
-   width: 100%;
+.containerRssFFBB h3,
+.containerRssNBA h3 {
+	font-size: medium;
+	border-bottom: 2px solid yellow;
+	width: 100%;
 }
 
 @media only screen and (max-width: 800px) {
-
-   .divRssFFBB li, .divRssNBA li{
-      /* font-size: 0.6rem; */
-      font-size: 0.6rem;
-   }
-
+	.divRssFFBB li,
+	.divRssNBA li {
+		/* font-size: 0.6rem; */
+		font-size: 0.6rem;
+	}
 }
 
-
-
 @media only screen and (max-width: 545px) {
+	.divRssFFBB li,
+	.divRssNBA li {
+		background-color: whitesmoke;
+		color: #141414;
+		width: 100%;
+		height: 2.7vh;
+		margin: 3px 0;
+		/* font-size: 0.6rem; */
+		font-size: 0.2rem;
+	}
 
-   .divRssFFBB li, .divRssNBA li{
-      background-color: whitesmoke;
-      color: #141414;
-      width: 100%;
-      height: 2.7vh;
-      margin: 3px 0;
-      /* font-size: 0.6rem; */
-      font-size: 0.2rem;
-   }
+	.divRssFFBB,
+	.divRssNBA {
+		height: 12vh;
+	}
 
+	.containerProchainMatchs,
+	.containerResultats {
+		margin-bottom: 2vh;
+	}
 
-   .divRssFFBB, .divRssNBA{
-      height: 12vh;
-   }
-
-   .containerProchainMatchs, .containerResultats {
-      margin-bottom: 2vh;
-   }
-
-
-   .containerRssFFBB h3, .containerRssNBA h3{
-      font-size: medium;
-   }
-
-
+	.containerRssFFBB h3,
+	.containerRssNBA h3 {
+		font-size: medium;
+	}
 }

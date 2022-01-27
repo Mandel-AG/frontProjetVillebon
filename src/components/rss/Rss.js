@@ -10,54 +10,66 @@ const RssFeed = () => {
   const [NBA, setNBA] = useState([])
 
   useEffect(() => {
-    const CORS_PROXY = "https://cors-anywhere.herokuapp.com/"
+    // const CORS_PROXY = "https://cors-anywhere.herokuapp.com/"
     let parser = new RSSParser();
-    parser.parseURL(`${CORS_PROXY}http://www.ffbb.com/rss2.xml`, function (err, feed) {
+    parser.parseURL(`https://www6.lequipe.fr/rss/actu_rss_Basket.xml`, function (err, feed) {
+      // parser.parseURL(`${CORS_PROXY}http://www.ffbb.com/rss2.xml`, function (err, feed) {
       if (err) throw err;
+      console.log('feed',feed)
       setFFBB(feed.items)
     })
-
-    parser.parseURL(`${CORS_PROXY}https://www.parlons-basket.com/feed/`, function (err, feed) {
-      if (err) throw err;
+    
+    parser.parseURL(`https://www.parlons-basket.com/feed/`, function (err, feed) {
+      // parser.parseURL(`${CORS_PROXY}https://www.parlons-basket.com/feed/`, function (err, feed) {
+        if (err) throw err;
       setNBA(feed.items)
 
     })
   }, [])
+  
+  return (
+    
+    <div className='containerRss'>
 
-    return (
-
-      <div className='containerRss'>
-
-      <div className='containerRssFFBB'>
-        <div>
-          <h3> FFBB </h3>
+        {console.log('ffbb',FFBB)}
+        {console.log('nba',NBA)}
+        <div className='containerRssFFBB'>
+          <div>
+            <h3> FFBB </h3>
+          </div>
+          <div className='divRssFFBB'>
+              <ul className='ulRssFFBB'>
+              {FFBB.map((item, i) => (
+                <a href={item.link} key={i} >
+              <li >
+              <strong>{item.pubDate.replace('+0100','')}</strong> - {item.contentSnippet} 
+              </li></a>
+          ))}
+              </ul>
+          </div>
         </div>
-        <div className='divRssFFBB'>
-            <ul className='ulRssFFBB'>
-            {FFBB.map((item, i) => (
-              <a href={item.link} key={i} >
-            <li >
-            <strong>{item.pubDate}</strong> - {item.contentSnippet} 
-             </li></a>
-        ))}
-            </ul>
-        </div>
-      </div>
 
 
 
-      <div className='containerRssNBA'>
-        <div>
-          <h3> NBA </h3>
-        </div>
-        <div className='divRssNBA'>
-            <ul className='ulRssNBA'>
+        <div className='containerRssNBA'>
+          <div>
+            <h3> NBA </h3>
+          </div>
+          <div className='divRssNBA'>
+
+          <ul className='ulRssNBA'>
               {NBA.map((item, i) => (
-                <li key={i} > <strong>{item.pubDate.replace('+0000','')}</strong>  - {item.contentSnippet} </li>
+                <a href={item.link} key={i} >
+                  <li >
+                    <strong>{item.pubDate.replace('+0000','')}</strong> - {item.contentSnippet} 
+                  </li>
+              </a>
               ))}
-            </ul>
+          </ul>
+
         </div>
       </div>
+
     </div>
       
     );
