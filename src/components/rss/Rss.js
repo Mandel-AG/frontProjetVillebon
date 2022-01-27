@@ -10,17 +10,13 @@ const RssFeed = () => {
   const [NBA, setNBA] = useState([])
 
   useEffect(() => {
-    // const CORS_PROXY = "https://cors-anywhere.herokuapp.com/"
     let parser = new RSSParser();
     parser.parseURL(`https://www6.lequipe.fr/rss/actu_rss_Basket.xml`, function (err, feed) {
-      // parser.parseURL(`${CORS_PROXY}http://www.ffbb.com/rss2.xml`, function (err, feed) {
       if (err) throw err;
-      console.log('feed',feed)
       setFFBB(feed.items)
     })
     
     parser.parseURL(`https://www.parlons-basket.com/feed/`, function (err, feed) {
-      // parser.parseURL(`${CORS_PROXY}https://www.parlons-basket.com/feed/`, function (err, feed) {
         if (err) throw err;
       setNBA(feed.items)
 
@@ -31,8 +27,6 @@ const RssFeed = () => {
     
     <div className='containerRss'>
 
-        {console.log('ffbb',FFBB)}
-        {console.log('nba',NBA)}
         <div className='containerRssFFBB'>
           <div>
             <h3> FFBB </h3>
