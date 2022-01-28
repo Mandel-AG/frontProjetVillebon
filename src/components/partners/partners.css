@@ -1,23 +1,18 @@
-.containerPartners{
-   min-height: 20vh;
-   padding: 20px;
-
+.containerPartners {
+	min-height: 20vh;
+	padding: 20px;
 }
 
-.divPartners{
-   display: flex;
-   align-items: center;
-   justify-content: space-around;
-   padding: 0 5px;
-   background-color: #141414;
+.divPartners {
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	padding: 0.5em 0.5em;
+	background-color: #141414;
+	overflow-x: hidden;
 }
 
-.imgPartner{
-   padding: 0 16em;
-
-}
-
-.divPartners img{
-   height: 20vh;
-   width: 20vh;
+.divPartners img {
+	height: 20vh;
+	width: 20vh;
 }

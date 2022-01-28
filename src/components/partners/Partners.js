@@ -18,11 +18,9 @@ function Partners(props){
    return(
       <div className="containerPartners  ">
             {/* <div className='divPartners'> */}
-            <div className='divPartners marquee-rtl marquee-multi-lignes '>
-               <div>
+            <div className='divPartners'>
                { mediasList }
                </div>
-            </div>
       </div>
    )
 }

@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react';
+import { Link } from 'react-router-dom';
 import { Loader, Rss, Partners } from '../index';
 import './accueil.css';
 
@@ -25,15 +26,16 @@ function Accueil (props){
 		setSelectedTeam([...props.scores])
 	};
 
-
 					
 		const events = props.events.map(event => (
-			<li className='accueilEvenements__eachEvent' key={Math.random()} > <p>{ event.title }  -  {event.content}</p> </li>
-			// <li className='marquee-rtl marquee-multi-lignes' key={Math.random()} > <p>{ event.title }  -  {event.content}</p> </li>	
-			))
+			<li className='accueilEvenements__eachEvent' > <Link to='/evenements'>
+				<p>{ event.title }  -  {event.content}</p>
+				</Link>
+			</li>
+		))
 			
-			const filteredScore = selectedTeam.map(score => (
-				<li key={Math.random()}  className='d-flex justify-content-around' >
+		const filteredScore = selectedTeam.map(score => (
+			<li key={Math.random()}  className='d-flex justify-content-around' >
 				{ (score.result.toLowerCase().trim() === 'victoire') ? (<img id='result'  src='/victory.png' alt='victoire' />) : (<img id='result'  src='/defeat.png' alt='victoire' />)}
 				{`${ score.result } des 
 				${ score.homeTeam }  contre 
@@ -47,7 +49,6 @@ function Accueil (props){
 			<div className='containeBlockAccueil'>
 				{(loader) ? (
 					<>
-					{console.log("state",selectedTeam)}
 						<div className='containerAccueilEvenements'>
 							<div>
 								<h3> Evenements </h3>
