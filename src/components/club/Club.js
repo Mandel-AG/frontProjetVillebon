@@ -36,30 +36,40 @@ class Club extends Component{
 
          <nav className="navClub">
 
-               <Link to="/club/gym">
-                  <div className="menu ">
-                     <img src='/gym.jpg' alt="gymnase" />
-                     <h4>GYM</h4>
-                  </div>
-               </Link> 
-
-
-
-               <Link to="/club/intro">
-                  <div className="menu menuClub">
-                     <img src='/club.png' alt='club' />
-                     <h4>Présentation du Club</h4>
-                  </div>   
-               </Link> 
-
-
-
-               <Link to="/club/members">
                   <div className="menu">
-                     <img src='/staff.jpg' alt='staff' />
-                  <h4>Membres</h4>
+                     <Link to="/club/gym">
+                        <figure>
+                           <img src='/gym.jpg' alt="gymnase" />
+                           {/* <figcaption>Gymnase</figcaption> */}
+                        </figure>
+                     <h4>GYM</h4>
+                     </Link> 
                   </div>
-               </Link>
+
+
+
+                  <div className="menu menuClub">
+                     <Link to="/club/intro">
+                        <figure>
+                           <img src='/club.png' alt='club' />
+                           {/* <figcaption>Présentation du club</figcaption> */}
+                        </figure>
+                        <h4>Présentation du club</h4>
+
+                     </Link> 
+                  </div>   
+
+
+
+                  <div className="menu">
+                     <Link to="/club/members">
+                        <figure>
+                           <img src='/staff.jpg' alt='staff' />
+                           {/* <figcaption>Membres</figcaption> */}
+                        </figure>
+                        <h4>Membres</h4>
+                     </Link>
+                  </div>
          </nav>
 
          </>

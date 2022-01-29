@@ -1,74 +1,63 @@
-.containerPresentationClub{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+.containerPresentationClub {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
 }
 
-
-
-.navClub{
-  display: flex;
-  justify-content: center;
+.navClub {
+	display: flex;
+	justify-content: center;
 }
 
-.navClub h2{
-  text-align: center;
+.navClub h2 {
+	text-align: center;
 }
 
-
-
-.menuMin{
-  background-color: blueviolet;
-  width: 10em;
-  height: 10em;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0;
-  padding: 0;
-  text-decoration: none;
-  margin: 2em;
-  position: relative;
-  overflow: hidden;
+.menuMin {
+	background-color: blueviolet;
+	width: 10em;
+	height: 10em;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 2em;
 }
 
-.menuMin h4{
-  font-weight: 900;
-  font-size: 2em;
-  text-decoration: none;
-  color: orange;
-  z-index: 1;
-  text-align: center;
+.menuMin h4 {
+	font-weight: 900;
+	font-size: 2em;
+	text-decoration: none;
+	color: orange;
+	z-index: 1;
+	text-align: center;
 }
 
-.menuMinClub h4{
-  font-size: 1.6em;
+.menuMinClub h4 {
+	font-size: 1.6em;
 }
 
-
-
-.menuMinBackground{
-  width: 100%;
-  background-image: url('/gym.jpg');
-  background-size: contain;
+.menuMin h4 {
+	pointer-events: none;
 }
 
-
-.menuMin img{
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  filter: grayscale(90%);
+.menuMinBackground {
+	width: 100%;
+	background-image: url("/gym.jpg");
+	background-size: contain;
 }
 
-
-.menuMin img:hover {
-  filter: grayscale(0%);
-  transform: scale(1.1);
+.menuMin img {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	filter: grayscale(90%);
 }
 
+.menuMin {
+	transform: scale(1.1);
+}
 
-.menuMin:hover{
-  text-decoration: none;
+.menuMin:hover {
+	text-decoration: none;
 }
