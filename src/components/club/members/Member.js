@@ -55,19 +55,20 @@ const Members = (props) => {
 
 
          <h2> Membres</h2>
+         <section className='memberList'>
+            {
+               filteredMembers.map(member => (
+               <div className="divEachMember" key={Math.random()}>
+               <img src={member.picture} alt={member.poste}/>
 
-         {
-            filteredMembers.map(member => (
-            <div className="divEachMember" key={Math.random()}>
-            <img src={member.picture} alt={member.poste}/>
-
-            <div className="divEachMemberText">
-            <p>{member.position}</p><br/>
-            <p>{member.firstName} {member.lastName}</p><br/>
-            </div>
-            </div>
-            ))          
-         }  
+               <div className="divEachMemberText">
+               <p>{member.position}</p><br/>
+               <p>{member.firstName} {member.lastName}</p><br/>
+               </div>
+               </div>
+               ))          
+            }  
+         </section>
          </> 
 
        ) : (<Loader />)

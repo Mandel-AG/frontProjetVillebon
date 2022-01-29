@@ -53,8 +53,14 @@
 
 /* Members */
 
+.memberList {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+}
+
 .divEachMember {
-	width: 25%;
+	width: 19rem;
 	display: flex;
 	padding: 2em;
 	flex-direction: column;
@@ -155,6 +161,16 @@ a:hover {
 	text-decoration: none;
 }
 
+/*
+Membres
+*/
+
+.memberList {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+}
+
 @media only screen and (max-width: 1200px) {
 	.navClub {
 		flex-direction: column;
@@ -178,11 +194,12 @@ a:hover {
 		height: 10em;
 	}
 
-	.divEachMember {
-		width: 40%;
+	.divEachGym {
+		flex-direction: column;
+		align-items: center;
 	}
 
-	.divEachGym {
+	.memberList {
 		flex-direction: column;
 		align-items: center;
 	}

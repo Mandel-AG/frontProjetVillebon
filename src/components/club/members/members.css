@@ -1,23 +1,5 @@
 /* Pac encore importé */
 
-
-/* .divEachMember{
-  width: 20em;
-  display: flex;
-  padding: 2em;
-  flex-direction: column;
+.memberList {
+	width: 100%;
 }
-
-.divEachMember img{
-  width: 15em;
-  height: 15em;
-}
-
-.divEachMemberText{
-  display: flex;
-  width: 100% ;
-  justify-content: center;
-  border-left: 1px solid black;
-  border-right: 1px solid black;
-  border-bottom: 1px solid black;
-} */
