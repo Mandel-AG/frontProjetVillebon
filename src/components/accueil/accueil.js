@@ -28,7 +28,7 @@ function Accueil (props){
 
 					
 		const events = props.events.map(event => (
-			<li className='accueilEvenements__eachEvent' > <Link to='/evenements'>
+			<li key={Math.random()} className='accueilEvenements__eachEvent' > <Link to='/evenements'>
 				<p>{ event.title }  -  {event.content}</p>
 				</Link>
 			</li>

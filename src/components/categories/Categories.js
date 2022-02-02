@@ -1,67 +1,51 @@
-import React, { Component } from 'react';
+import React, { useEffect, useState } from 'react';
 import './categories.css';
 
-class Categories extends Component{
-   constructor(props){
-      super(props)
+function Categories(props){
 
-      this.state = {
-         teams:[],
-			selectedTeam:[],
-			scores:[],
-			SelectedScore:[],
-			selectedPicture:'',
-			members:[],
-			selectedMembers:[]
-      }
-	}
+	const [selectedTeam,setSelectedTeam ] = useState([]);
+	const [selectedPicture, setSelectedPicture ] =useState('');
+	const [SelectedScore, setSelectedScore] = useState([]);
+	const [selectedMembers, setSelectedMembers] = useState([]);
+	
+	
+
+	
+	useEffect(() => {
+		const selectedTeam = props.teams.filter( element => element.name === 'sm1');
+		const selectedMembers = props.members.filter( element => element.team === 'sm1');
+		const selectedScore = props.scores.filter(element => element.homeTeam === 'sm1');
+
+
+		setSelectedTeam(selectedTeam);
+		setSelectedMembers(selectedMembers);
+		setSelectedScore(selectedScore);
+	},[props.teams])
 
 
 	
 
-	
-	component(){
-
-				
-				const selectedTeam = this.props.teams.filter( element => element.name === 'sm1');
-				const selectedMembers = this.props.members.filter( element => element.team === 'sm1');
-				const SelectedScore = this.props.scores.filter(element => element.homeTeam === 'sm1');
-
-
-				this.setState({
-					selectedTeam,
-					selectedMembers,
-					SelectedScore
-				});
-	}
-
-
-	
-
-	filterTeam = (type) =>{
-		const teams = [ ...this.props.teams];
-		const scores = [...this.props.scores];
+	const filterTeam = (type) =>{
+		const teams = [ ...props.teams];
+		const scores = [...props.scores];
 
 		const filteredTeam = teams.filter( element => element.name === type);
 		const filteredScore = scores.filter( element => element.homeTeam.trim().toLowerCase() === type.toLowerCase());
 
-		const selectedPicture = this.state.selectedTeam.map( element => element.picture)
+		const selectedPicture = selectedTeam.map( element => element.picture)
 
-		const selectedMembers = this.props.members.filter( element => element.role.toLowerCase() === 'player' && element.team.toLowerCase() === type.toLowerCase());
-		this.setState({
-			selectedTeam : filteredTeam,
-			SelectedScore : filteredScore,
-			selectedPicture,
-			selectedMembers
-		})
+		const selectedMembers = props.members.filter( element => element.role.toLowerCase() === 'player' && element.team.toLowerCase() === type.toLowerCase());
+
+
+			setSelectedTeam(filteredTeam);
+			setSelectedScore(filteredScore);
+			setSelectedPicture(selectedPicture);
+			setSelectedMembers(selectedMembers);
 	}
 
 
 
-
-   render(){
-
-		const filteredScore = this.state.SelectedScore.map(score => (
+		const filteredScore = SelectedScore.map(score => (
 			<li key={Math.random()} >
 				{ (score.result.toLowerCase().trim() === 'victoire') ? (<img id='result'  src='/victory.png' alt='victoire' />) : (<img id='result'  src='/defeat.png' alt='victoire' />)}
 				{`${ score.result } des 
@@ -72,13 +56,13 @@ class Categories extends Component{
 			</li>
 		))
 
-		const member = this.state.selectedMembers.map(element =>(
+		const member = selectedMembers.map(element =>(
 			<div key={element.id}>
 				<li>NOM : {element.firstName}  {element.lastName} - POSTE: {element.position} </li>
 			</div>
 		))
 
-		const teamPicture = this.state.selectedTeam.map(element => (
+		const teamPicture = selectedTeam.map(element => (
 			<div className='imagePresentation' key={element.id}>
 				<img src={element.picture} alt={element.name} />
 			</div>
@@ -92,13 +76,13 @@ class Categories extends Component{
 							<h3>Choisissez une équipe</h3>
 							<div className='categoriesfiltreEquipe'>
 								<ul>
-									<li onClick={()=>this.filterTeam('sm1')} >SM1</li>
-									<li onClick={()=>this.filterTeam('u20')} >U20</li>
-									<li onClick={()=>this.filterTeam('u17')} >U17</li>
-									<li onClick={()=>this.filterTeam('u15')} >U15</li>
-									<li onClick={()=>this.filterTeam('u13')} >U13</li>
-									<li onClick={()=>this.filterTeam('u11')} >U11</li>
-									<li onClick={()=>this.filterTeam('u9')} >U9</li>
+									<li onClick={()=>filterTeam('sm1')} >SM1</li>
+									<li onClick={()=>filterTeam('u20')} >U20</li>
+									<li onClick={()=>filterTeam('u17')} >U17</li>
+									<li onClick={()=>filterTeam('u15')} >U15</li>
+									<li onClick={()=>filterTeam('u13')} >U13</li>
+									<li onClick={()=>filterTeam('u11')} >U11</li>
+									<li onClick={()=>filterTeam('u9')} >U9</li>
 								</ul>
 							</div>
 						</div>
@@ -112,7 +96,7 @@ class Categories extends Component{
 						<div className='containerInfos'>
 							<div className='containerPresentation'>
 									<h2> Presentation </h2>
-									<h3>{this.state.selectedTeam.map(element=> element.name.toUpperCase())}</h3>
+									<h3>{selectedTeam.map(element=> element.name.toUpperCase())}</h3>
 								<div className='divPresentation'>
 										{teamPicture}
 								</div>
@@ -120,8 +104,8 @@ class Categories extends Component{
 
 							<div className='categoryInfos'>
 									<h3>Infos</h3>
-									<h4> Prix : {this.state.selectedTeam.map(element=> element.price)} euros.</h4>
-									<h4> Horaires : {this.state.selectedTeam.map(element=> element.schedule)}</h4>
+									<h4> Prix : {selectedTeam.map(element=> element.price)} euros.</h4>
+									<h4> Horaires : {selectedTeam.map(element=> element.schedule)}</h4>
 								</div>
 							
 							<div className='containerCategoriesRoster'>
@@ -148,10 +132,7 @@ class Categories extends Component{
 			</div>
 
       )
-   }
 }
 
 
 export default Categories;
-
-
