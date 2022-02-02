@@ -7,7 +7,8 @@ class Gallery extends Component{
       super(props)
 
       this.state= {
-         filteredMedias : [...this.props.medias]
+         filteredMedias : [...this.props.medias],
+         link:''
       }
    }
 
@@ -17,9 +18,9 @@ class Gallery extends Component{
       const newMedias = [ ...medias];
       const filtered = newMedias.filter( media => media.mediaType === 'game')
       this.setState({
-         filteredMedias : filtered
+         filteredMedias : filtered,
+         link:'game'
       })
-      console.log('filtered media', this.state.filteredMedias)
    }
    
    filterMedias = (type) => {
@@ -27,7 +28,8 @@ class Gallery extends Component{
       const newMedias = [ ...medias];
       const filtered = newMedias.filter( media => media.mediaType === type)
       this.setState({
-         filteredMedias : filtered
+         filteredMedias : filtered,
+         link : type
       })
    }
    
@@ -40,14 +42,13 @@ class Gallery extends Component{
             <p>{ media.description }</p>
          </div>
       ))
-      console.log('mount', this.state.filteredMedias)
       
       
       return(
          <div className="containerGallery">
             <ul className='ulGallery'>
-               <li  onClick={()=> this.filterMedias('game') }>Equipes</li>
-               <li  onClick={()=> this.filterMedias('event') }>Evenements</li>
+               <li className={this.state.link === 'game' ? 'active' : ''} onClick={()=> this.filterMedias('game') }>Equipes</li>
+               <li className={this.state.link === 'event' ? 'active' : ''} onClick={()=> this.filterMedias('event') }>Evenements</li>
             </ul>
 
             <div className='divGallery'>

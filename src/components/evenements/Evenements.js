@@ -13,7 +13,6 @@ function Evenements(props){
             <h3>{ event.title }</h3>
             <p>{ event.content }</p>
             <p> Le {event.date.replace("T", " à ").replace(":","h").split(":00.000Z")}</p>
-            {console.log(event.date.toString())}
          </div>
 
       </div>
