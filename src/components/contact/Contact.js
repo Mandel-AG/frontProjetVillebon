@@ -42,20 +42,12 @@ class Contact extends Component {
   render() {
     return (
       <div className="containerContact">
-         <div className='divInfos'>
-            <h3>Informations</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum eu porta mi, ac dignissim nisi. 
-               Orci varius natoque penatibus et magnis dis parturient montes, 
-               nascetur ridiculus mus. Sed eu luctus quam. Aenean rhoncus dui dolor, 
-               s tortor volutpat vel. Maecenas ac arcu nunc. Quisque aliquet quam id laoreet pulvinar. 
-               Maecenas bibendum nibh eu vestibulum pulvinar. Nunc vitae enim dapibus, faucibus eros at, 
-               consectetur augue.</p>
-         </div>
-
+   
          <div className='divInputContact'>
 
             <h3>Vous pouvez nous contacter directement ici.</h3>
-            <p>Nous vous répondrons dans les plus bref délais</p>
+            <p>Si vous ne trouvez pas l'information que vous cherchez sur le site, vous pouvez nous contacter directement. 
+               Une réponse vous sera donnée dans les plus brefs délais.</p>
             <Formik
                onSubmit={this.submit}
                initialValues={{name: '', email: '', message: ''}}
