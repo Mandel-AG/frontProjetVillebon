@@ -1,242 +1,235 @@
-.containerCategories{
-   display: flex;
-   justify-content: space-around;
+.containerCategories {
+	display: flex;
+	justify-content: space-around;
+	margin-bottom: 0.4em;
 }
 
-.divEquipes{
-   padding: 2vw;
-   width: 25%;
-   border: 2px solid black;
-   padding-top: 0;
+.divEquipes {
+	padding: 2vw;
+	width: 25%;
+	border: 2px solid black;
+	padding-top: 0;
 }
 
-.divPresentation img{
-   height: 100%;
+.divPresentation img {
+	height: 100%;
 }
 
-.divEquipes h3, .divInfos h3{
-   font-size: 2rem;
+.divEquipes h3,
+.divInfos h3 {
+	font-size: 2rem;
 }
 
-.categoriesfiltreEquipe:hover{
-   cursor: pointer;
+.categoriesfiltreEquipe:hover {
+	cursor: pointer;
 }
 
-.categoriesfiltreEquipe ul{
-   padding: 0;
-   list-style: none;
-   line-height: 7vh;
-   font-size: 1.3rem;
+.categoriesfiltreEquipe ul {
+	padding: 0;
+	list-style: none;
+	line-height: 7vh;
+	font-size: 1.3rem;
 }
 
 /* Infos */
-.containerInfos{
-   width: 70%;
-   display: flex;
-   flex-wrap: wrap;
-   border: 2px solid black;
+.containerInfos {
+	width: 70%;
+	display: flex;
+	flex-wrap: wrap;
+	border: 2px solid black;
+	padding-bottom: 0.4em;
 }
 
-.divInfos h3{
-   width: 100%;
+.divInfos h3 {
+	width: 100%;
 }
 
-.containerPresentation{
-   width: 100%;
-   height: 70vh;
-   text-align: center;
-   margin-bottom: 2vh;
+.containerPresentation {
+	width: 100%;
+	height: 70vh;
+	text-align: center;
+	margin-bottom: 2vh;
 }
 
-.divPresentation{
-   width: 100%;
-   height: 90%;
+.divPresentation {
+	width: 100%;
+	height: 90%;
 }
 
-.divRoster{
-   width: 100%;
-   margin-bottom: 2em;
+.divRoster {
+	width: 100%;
+	margin-bottom: 2em;
 }
 
-.imagePresentation{
-   height: 90%;
-   width: 100%;
+.imagePresentation {
+	height: 90%;
+	width: 100%;
 }
 
-
-.imagePresentation img{
-   width: 70%;
-   height: 100%;
+.imagePresentation img {
+	max-width: 70%;
 }
-
 
 /* Roster */
-.containerCategoriesRoster{
-   display: flex;
-   align-items: center;
-   flex-direction: column;
-   width: 100%;
+.containerCategoriesRoster {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	width: 100%;
 }
 
-
-.divRoster{
-   width: 100%;
-   border: 2px solid black;
-   width: 70%;
-   background-color: #141414;
-   color: whitesmoke;
-   text-align: center;
-   padding: 3px;
-   overflow-y: auto;
-   height: 22vh;
+.divRoster {
+	width: 100%;
+	border: 2px solid black;
+	width: 70%;
+	background-color: #141414;
+	color: whitesmoke;
+	text-align: center;
+	padding: 3px;
+	overflow-y: auto;
+	height: 22vh;
 }
 
-
-.ulCategoriesRoster{
-   padding: 0;
-   display: flex;
-   justify-content: center;
-   flex-direction: column;
-   justify-content: space-between;
-   list-style: none;
-   margin: 0;
+.ulCategoriesRoster {
+	padding: 0;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	justify-content: space-between;
+	list-style: none;
+	margin: 0;
 }
 
-.divRoster li{
-   background-color: whitesmoke;
-   color: #141414;
-   width: 100%;
-   height: 3vh;
-   margin: 3px 0;
-   font-size: 1.2rem;
-   box-sizing: border-box;
+.divRoster li {
+	background-color: whitesmoke;
+	color: #141414;
+	width: 100%;
+	height: 3vh;
+	margin: 3px 0;
+	font-size: 1.2rem;
+	box-sizing: border-box;
 }
-
 
 /* Results */
 
-
-.containerCategoriesResults{
-   display: flex;
-   align-items: center;
-   flex-direction: column;
-   width: 100%;
+.containerCategoriesResults {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	width: 100%;
 }
 
-.divCategoriesResults{
-   width: 100%;
-   border: 2px solid black;
-   width: 70%;
-   background-color: #141414;
-   color: whitesmoke;
-   text-align: center;
-   padding: 3px;
-   overflow-y: auto;
-   height: 22vh;
+.divCategoriesResults {
+	width: 100%;
+	border: 2px solid black;
+	width: 70%;
+	background-color: #141414;
+	color: whitesmoke;
+	text-align: center;
+	padding: 3px;
+	overflow-y: auto;
+	height: 22vh;
 }
 
-.ulCategoriesResults{
-   padding: 0;
-   display: flex;
-   justify-content: center;
-   flex-direction: column;
-   justify-content: space-between;
-   list-style: none;
-   margin: 0;
+.ulCategoriesResults {
+	padding: 0;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	justify-content: space-between;
+	list-style: none;
+	margin: 0;
 }
 
-
-
-.divCategoriesResults li{
-   background-color: whitesmoke;
-   color: #141414;
-   width: 100%;
-   height: 5vh;
-   margin: 3px 0;
-   font-size: 1.4rem;
-   box-sizing: border-box;
-   position: relative;
+.divCategoriesResults li {
+	background-color: whitesmoke;
+	color: #141414;
+	width: 100%;
+	height: 5vh;
+	margin: 3px 0;
+	font-size: 1.4rem;
+	box-sizing: border-box;
+	position: relative;
 }
 
-.divCategoriesResults li img{
-   position: absolute;
-   left: 0.4em;
-   top:0.2em;
+.divCategoriesResults li img {
+	position: absolute;
+	left: 0.4em;
+	top: 0.2em;
 }
 
-
-.categoryInfos{
-   width: 100%;
-   margin-bottom: 2em;
-   text-align: center;
+.categoryInfos {
+	width: 100%;
+	margin-bottom: 2em;
+	text-align: center;
 }
-
 
 @media only screen and (max-width: 850px) {
- 
-   .divEquipes h3, .divInfos h3{
-      font-size: 1.3rem;
-   }
+	.divEquipes h3,
+	.divInfos h3 {
+		font-size: 1.3rem;
+	}
 
+	.containerPresentation {
+		height: 30vh;
+	}
+
+	.categoryInfos {
+		margin-top: 3em;
+	}
 }
 
 @media only screen and (max-width: 545px) {
+	.divEquipes h3,
+	.divInfos h3 {
+		font-size: 1.3rem;
+		font-weight: 800;
+	}
 
-   .divEquipes h3, .divInfos h3{
-      font-size: 1.3rem;
-      font-weight: 800;
-   }
+	.containerPresentation {
+		height: 30vh;
+	}
 
+	.containerInfos li {
+		font-size: 0.8em;
+		height: 6vh;
+	}
 
-   .containerPresentation{
-      height: 30vh;
-   }
+	.imagePresentation {
+		width: 100%;
+	}
 
-   .containerInfos li {
-      font-size: 0.8em;
-      height: 6vh;
-   }
+	.imagePresentation img {
+		width: 100%;
+	}
 
+	.categoryInfos {
+		margin: 3em 0;
+	}
 
-   .imagePresentation{
-      width: 100%;
-   }
+	.divCategoriesResults li {
+		height: 6vh;
+	}
 
-   .imagePresentation img{
-      width: 100%;
-   }
+	.categoryInfos h4 {
+		font-size: 1em;
+	}
 
-   .categoryInfos{
-      margin: 3em 0;
-   }
+	.divCategoriesResults,
+	.divRoster {
+		width: 90%;
+	}
 
-   .divCategoriesResults li{
-      height: 6vh;
-   }
+	#result {
+		width: 25px;
+		height: 25px;
+	}
 
-   .categoryInfos h4{
-      font-size: 1em;
+	.divEquipes {
+		width: 15%;
+	}
 
-   }
-
-   .divCategoriesResults, .divRoster{
-      width: 90%;
-   }
-
-   #result{
-      width: 25px;
-      height: 25px;
-   }
-
-
-   .divEquipes{
-      width: 15%;
-   }
-
-
-
-   .divEquipes h3{
-      display: none;
-   }
-
+	.divEquipes h3 {
+		display: none;
+	}
 }
