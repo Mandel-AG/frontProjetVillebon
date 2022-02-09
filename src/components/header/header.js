@@ -17,9 +17,9 @@ function Header(props){
             <ul className='ulHeader'>
                <NavLink className='link' activeClassName='underline' exact to='/'> Accueil </NavLink>
                <NavLink className='link' activeClassName='underline' to='/club'> Club </NavLink>
-               <NavLink className='link' activeClassName='underline' to='/categories' > Categorie </NavLink>
-               <NavLink className='link' activeClassName='underline' to='/evenements' > Evenement </NavLink>
-               <NavLink className='link' activeClassName='underline' to='/gallery'> Gallery </NavLink>
+               <NavLink className='link' activeClassName='underline' to='/categories' > Catégories </NavLink>
+               <NavLink className='link' activeClassName='underline' to='/evenements' > Évenement </NavLink>
+               <NavLink className='link' activeClassName='underline' to='/gallery'> Gallerie </NavLink>
                <NavLink className='link' activeClassName='underline' to='/contact'> Contact </NavLink>
                <NavLink className='link' activeClassName='underline' to='/boutique'> Boutique </NavLink>
             </ul>

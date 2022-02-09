@@ -51,7 +51,7 @@ function Accueil (props){
 					<>
 						<div className='containerAccueilEvenements'>
 							<div>
-								<h3> Evenements </h3>
+								<h3> Évenements </h3>
 							</div>
 							<div className='divAccueilEvenements'>
 									<ul className='ulAccueilEvenements'>
@@ -73,7 +73,7 @@ function Accueil (props){
 
 						<div className='containerResultats'>
 							<div>
-								<h3> Resultats </h3>
+								<h3> Résultats </h3>
 							</div>
 							<div className='divResultats'>
 									<ul className='ulAccueilResultats'>

@@ -22,14 +22,16 @@ const RssFeed = () => {
 
     })
   }, [])
-  
+
+
+
   return (
     
     <div className='containerRss'>
 
         <div className='containerRssFFBB'>
           <div>
-            <h3> FFBB </h3>
+            <h3 className='FFBB'> FFBB </h3>
           </div>
           <div className='divRssFFBB'>
               <ul className='ulRssFFBB'>
@@ -41,6 +43,7 @@ const RssFeed = () => {
           ))}
               </ul>
           </div>
+          <span>https://www6.lequipe.fr</span>
         </div>
 
 
@@ -50,7 +53,6 @@ const RssFeed = () => {
             <h3> NBA </h3>
           </div>
           <div className='divRssNBA'>
-
           <ul className='ulRssNBA'>
               {NBA.map((item, i) => (
                 <a href={item.link} key={i} >
@@ -60,8 +62,8 @@ const RssFeed = () => {
               </a>
               ))}
           </ul>
-
         </div>
+              <span>https://www.parlons-basket.com</span>
       </div>
 
     </div>
